@@ -23,7 +23,7 @@ import { ExpensesIndexComponent } from './components/expenses/expenses-index/exp
 
 const routes = [
   { path: 'register', component: RegistrationComponent},
-  { path: '**', component: RegistrationComponent},
+  { path: '**', component: LoginComponent},
   { path: 'login', component: LoginComponent},
   { path: 'expenses', component: ExpensesIndexComponent}
 ];

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.form.group({
       email: new FormControl,
       password: new FormControl
-    })
+    });
   }
 
   onSubmit() {
