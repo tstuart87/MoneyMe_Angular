@@ -1,0 +1,16 @@
+<p>Expenses</p>
+<a mat-raised-button color="primary">Create New</a>
+<hr />
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; let columns; let columnNames;"></mat-row>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+            <mat-cell *matCellDef="let expense;">{{expense.Description}}</mat-cell>
+        </ng-container>
+
+    </mat-table>
+</div>
