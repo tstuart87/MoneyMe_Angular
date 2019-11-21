@@ -11,7 +11,7 @@ export class ExpensesService {
   constructor(private http: HttpClient) { }
 
   getExpenses() {
-    return this.http.get(`${API_Url}/Expenses`, { headers: this.getHeaders() });
+    return this.http.get(`${API_Url}/api/Expenses`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
