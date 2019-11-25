@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = 'https://localhost:4200'
+const Api_Url = 'https://localhost:44325'
 
 @Injectable({
   providedIn: 'root'
@@ -17,17 +17,17 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   register(regUserData: RegisterUser) { 
-    return this.http.post(`${Api_Url}/api/account/Register`, regUserData);
+    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData);
   }
 
   login(loginInfo) {
     const authString =
-    `grant_type-password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
+    `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
     return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/expenses']);
+      this.router.navigateByUrl('/expenses'); //change where this logging in navigates to, eventually
     });
   }
 
@@ -44,7 +44,7 @@ export class AuthService {
     this.isLoggedIn.next(false);
 
     this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
-    this.router.navigate(['/login']);
+    this.router.navigateByUrl('/login');
   }
 
   private setHeaders(): HttpHeaders {
