@@ -1,0 +1,44 @@
+<h1>Future Fun</h1>
+<a mat-raised-button class="nav-btn" routerLink="/futureFun/create">Create New</a>
+<hr />
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="details">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let futureFun;">
+                <i class="material-icons" routerLink="/futureFun/detail/{{futureFun.FunId}}">library_books</i>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="FunId">
+            <mat-header-cell *matHeaderCellDef>FunId</mat-header-cell>
+            <mat-cell *matCellDef="let futureFun;">{{futureFun.FunId}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="OwnerId">
+            <mat-header-cell *matHeaderCellDef>OwnerId</mat-header-cell>
+            <mat-cell *matCellDef="let futureFun;">{{futureFun.OwnerId}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+            <mat-cell *matCellDef="let futureFun;">{{futureFun.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let futureFun;">{{futureFun.Amount}}</mat-cell>
+        </ng-container>
+
+        <mat-cell *matCellDef="let futureFun;">
+            <i class="material-icons" routerLink="/futureFun/edit/{{futureFun.FunId}}">edit</i>
+            <i class="material-icons" routerLink="/futureFun/delete/{{futureFun.FunId}}">delete</i>
+        </mat-cell>
+
+    </mat-table>
+</div>

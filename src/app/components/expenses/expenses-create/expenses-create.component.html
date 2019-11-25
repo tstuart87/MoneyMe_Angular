@@ -1,0 +1,35 @@
+<h1>New Expense</h1>
+<hr />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="expensesForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Company" formControlName="Company" type="Company" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Description" formControlName="Description" type="Description" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Amount" formControlName="Amount" type="Amount" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Month" formControlName="Month" type="Month" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Year" formControlName="Year" type="Year" />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" type="submit">Create Expense</button>
+</form>
+
+<a mat-button routerLink="/expenses">Back to Expenses List</a>
