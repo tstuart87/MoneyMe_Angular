@@ -10,12 +10,12 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <ng-container matColumnDef="details">
+        <!-- <ng-container matColumnDef="details">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let expenses;">
                 <i class="material-icons" routerLink="/expenses/detail/{{expenses.ExpenseId}}">library_books</i>
             </mat-cell>
-        </ng-container>
+        </ng-container> -->
 
         <ng-container matColumnDef="Company">
             <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
@@ -34,18 +34,21 @@
 
         <ng-container matColumnDef="Month">
             <mat-header-cell *matHeaderCellDef>Month</mat-header-cell>
-            <mat-cell *matCellDef="let expenses;">{{expenses.Month}}</mat-cell>
+            <mat-cell *matCellDef="let expenses;">{{expenses.Info[0].Month}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="Year">
             <mat-header-cell *matHeaderCellDef>Year</mat-header-cell>
-            <mat-cell *matCellDef="let expenses;">{{expenses.Year}}</mat-cell>
+            <mat-cell *matCellDef="let expenses;">{{expenses.Info[0].Year}}</mat-cell>
         </ng-container>
 
-        <mat-cell *matCellDef="let expenses;">
-            <i class="material-icons" routerLink="/expenses/edit/{{expenses.ExpenseId}}">edit</i>
-            <i class="material-icons" routerLink="/expenses/delete/{{expenses.ExpenseId}}">delete</i>
-        </mat-cell>
+        <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let expenses;">
+                    <i class="material-icons" routerLink="/expenses/edit/{{expenses.ExpenseId}}">edit</i>
+                    <i class="material-icons" routerLink="/expenses/delete/{{expenses.ExpenseId}}">delete</i>
+            </mat-cell>
+        </ng-container>
 
     </mat-table>
 </div>

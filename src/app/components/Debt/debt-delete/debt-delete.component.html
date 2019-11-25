@@ -16,11 +16,11 @@
     </div>
     <div>
         <label>Month: </label>
-        <span>{{debt.Month}}</span>
+        <span>{{debt.Info[0].Month}}</span>
     </div>
     <div>
         <label>Year: </label>
-        <span>{{debt.Year}}</span>
+        <span>{{debt.Info[0].Year}}</span>
     </div>
     <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
 </div>

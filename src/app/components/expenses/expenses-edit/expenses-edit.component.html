@@ -1,15 +1,15 @@
 <h1>Edit Expense</h1>
 <hr />
 
-<div>
+<div *ngIf="expenses">
     <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
         <div>
-            <div hidden>
+            <!-- <div hidden>
                 <input matInput placeHolder="ExpenseId" formControlName="ExpenseId" type="number" required [value]="expenses.ExpenseId" />
             </div>
             <div hidden>
                 <input matInput placeHolder="OwnerId" formControlName="OwnerId" type="text" required [value]="expenses.OwnerId" />
-            </div>
+            </div> -->
             <div>
                 <mat-form-field>
                     <input matInput placeholder="Company" formControlName="Company" type="text" required [value]="expenses.Company" />
@@ -27,12 +27,12 @@
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Month" formControlName="Month" type="Date" required [value]="expenses.Month" />
+                    <input matInput placeholder="Month" formControlName="Month" type="number" required [value]="expenses.Info[0].Month" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Year" formControlName="Year" type="number" required [value]="expenses.Year" />
+                    <input matInput placeholder="Year" formControlName="Year" type="number" required [value]="expenses.Info[0].Year" />
                 </mat-form-field>
             </div>
 
