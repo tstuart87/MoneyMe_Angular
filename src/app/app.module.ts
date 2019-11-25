@@ -18,6 +18,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //check with Becky about this.
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
+
 import { ExpensesService } from './services/expenses.service';
 import { ExpensesIndexComponent } from './components/expenses/expenses-index/expenses-index.component';
 import { ExpensesCreateComponent } from './components/expenses/expenses-create/expenses-create.component';
@@ -31,6 +32,13 @@ import { FutureFunCreateComponent } from './components/futureFun/future-fun-crea
 import { FutureFunDetailComponent } from './components/futureFun/future-fun-detail/future-fun-detail.component';
 import { FutureFunEditComponent } from './components/futureFun/future-fun-edit/future-fun-edit.component';
 import { FutureFunDeleteComponent } from './components/futureFun/future-fun-delete/future-fun-delete.component';
+
+import { DebtIndexComponent } from './components/Debt/debt-index/debt-index.component';
+import { DebtService } from './services/debt.service';
+import { DebtCreateComponent } from './components/Debt/debt-create/debt-create.component';
+import { DebtDetailComponent } from './components/Debt/debt-detail/debt-detail.component';
+import { DebtEditComponent } from './components/Debt/debt-edit/debt-edit.component';
+import { DebtDeleteComponent } from './components/Debt/debt-delete/debt-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -53,7 +61,15 @@ const routes = [
      { path: 'delete/:id', component: FutureFunDeleteComponent}
     ]
   },  
+    { path: 'debt', children: [
+    { path: '', component: DebtIndexComponent },
+    { path: 'create', component: DebtCreateComponent },
+    { path: 'detail/:id', component: DebtDetailComponent },
+    { path: 'edit/:id', component: DebtEditComponent },
+    { path: 'delete/:id', component: DebtDeleteComponent }
+  ]},
   { path: '**', component: RegistrationComponent }
+
 ];
 
 @NgModule({
@@ -71,7 +87,13 @@ const routes = [
     FutureFunCreateComponent,
     FutureFunDetailComponent,
     FutureFunEditComponent,
-    FutureFunDeleteComponent
+    FutureFunDeleteComponent,
+    DebtIndexComponent,
+    DebtCreateComponent,
+    DebtDetailComponent,
+    DebtEditComponent,
+    DebtDeleteComponent
+
   ],
   imports: [
     BrowserModule,
@@ -91,7 +113,8 @@ const routes = [
   providers: [
     AuthService,
     FutureFunService,
-    ExpensesService
+    ExpensesService,
+    DebtService
   ],
   exports: [
   ],
