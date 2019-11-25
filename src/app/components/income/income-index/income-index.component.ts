@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FutureFunService } from 'src/app/services/future-fun.service';
+import { FutureFun } from 'src/app/models/FutureFun';
+import { MatTableDataSource } from '@angular/material';
 import { IncomeService } from 'src/app/services/income.service';
 import { Income } from 'src/app/models/Income';
-import { MatTab, MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-income-index',
@@ -10,14 +12,14 @@ import { MatTab, MatTableDataSource } from '@angular/material';
 })
 export class IncomeIndexComponent implements OnInit {
 
-  constructor(private indexService: IncomeService) { }
+  constructor(private incomeService: IncomeService) { }
 
-  coloumnNames = ['OwnerId', 'Company', 'Description', 'Amount', 'Year', 'IncomeId', 'Month'];
+  columnNames = ['Description', 'Amount', 'Month', 'Year', 'buttons'];
   dataSource: MatTableDataSource<Income>;
 
   ngOnInit() {
-    this.indexService.getIncomes().subscribe((incomes: Income[])=>{});
-    this.dataSource = new MatTableDataSource<Income>(income)
+    this.incomeService.getIncomes().subscribe((income: Income[]) => {
+      this.dataSource = new MatTableDataSource<Income>(income);
+    });
   }
-
 }

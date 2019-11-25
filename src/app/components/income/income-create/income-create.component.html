@@ -1,0 +1,30 @@
+<h1>New Income</h1>
+<hr />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="incomeForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Description" formControlName="Description" type="Description" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Amount" formControlName="Amount" type="Amount" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Month" formControlName="Month" type="number" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Year" formControlName="Year" type="number" />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" type="submit">Create Income</button>
+</form>
+
+<a mat-button routerLink="/Income">Back to Income List</a>

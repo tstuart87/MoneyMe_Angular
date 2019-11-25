@@ -1,0 +1,41 @@
+<h1>Edit Income</h1>
+<hr />
+
+<div *ngIf="income">
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+        <div>
+            <div hidden>
+                <input matInput placeHolder="IncomeId" formControlName="IncomeId" type="number" required
+                    [value]="income.IncomeId" />
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Description" formControlName="Description" type="text" required
+                        [value]="income.Description" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Amount" formControlName="Amount" type="number" required
+                        [value]="income.Amount" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Month" formControlName="Month" type="number" required
+                        [value]="income.Info[0].Month" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Year" formControlName="Year" type="number" required
+                        [value]="income.Info[0].Year" />
+                </mat-form-field>
+            </div>
+
+        </div>
+        <button mat-raised-button color="warn" (click)="onSubmit">Save</button>
+    </form>
+</div>
+
+<button mat-raised-button color="primary" routerLink="/Income">Back to Income List</button>
