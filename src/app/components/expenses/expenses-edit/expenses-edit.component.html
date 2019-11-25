@@ -1,0 +1,44 @@
+<h1>Edit Expense</h1>
+<hr />
+
+<div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+        <div>
+            <div hidden>
+                <input matInput placeHolder="ExpenseId" formControlName="ExpenseId" type="number" required [value]="expenses.ExpenseId" />
+            </div>
+            <div hidden>
+                <input matInput placeHolder="OwnerId" formControlName="OwnerId" type="text" required [value]="expenses.OwnerId" />
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Company" formControlName="Company" type="text" required [value]="expenses.Company" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Description" formControlName="Description" type="text" required [value]="expenses.Description" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Amount" formControlName="Amount" type="number" required [value]="expenses.Amount" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Month" formControlName="Month" type="Date" required [value]="expenses.Month" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Year" formControlName="Year" type="number" required [value]="expenses.Year" />
+                </mat-form-field>
+            </div>
+
+        </div>
+        <button mat-raised-button class="nav-btn" type="submit">Save</button>
+    </form>
+</div>
+
+<a mat-button routerLink="/expenses">Back to Expense List</a>

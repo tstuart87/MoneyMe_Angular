@@ -13,13 +13,12 @@ enum Months {
     December
 }
 
-export interface Expense {
-    OwnerId: number;
+export interface Expenses {
+    OwnerId: string;
     Company: string;
     Description: string;
     Amount: number;
     Year: number;
-    ExpenseId: number;
     Month: Months;
-    // not sure if I need the 'public virtual Monthly Monthly' from Expenses.cs
+    ExpenseId: number;
 }

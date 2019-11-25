@@ -5,4 +5,26 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', 'Arial', sans-serif;
+    height: 100%;
+}
+
+button.nav-btn{
+    color: red;
+    text-decoration: none;
+    background-color: rgba(57, 226, 122, 0.769);
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 30px rgba(163, 33, 33, 0.6);
+    -webkit-box-shadow: 0 0 30px rgba(105, 37, 37, 0.6);
+    -o-box-shadow: 0 0 30px rgba(245, 238, 37, 0.6);
+}
+
+button.nav-btn:hover{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: #2a593f;
+    box-shadow: 0 0 30px rgba(241, 159, 159, 0.714);
+    -moz-box-shadow: 0 0 30px rgba(248, 203, 203, 0.816);
+    -webkit-box-shadow: 0 0 30px rgba(248, 161, 161, 0.85);
+    -o-box-shadow: 0 0 30px rgba(248, 155, 155, 0.823);
 }

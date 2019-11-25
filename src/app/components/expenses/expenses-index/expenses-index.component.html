@@ -1,16 +1,51 @@
-<p>Expenses</p>
-<a mat-raised-button color="primary">Create New</a>
+<h1>Expenses</h1>
+<a mat-raised-button class="nav-btn" routerLink="/expenses/create">Create New</a>
 <hr />
 
+<img class="happySadIcon" src="../../../../assets/img/expensesGood.png" />
+
 <div>
-    <mat-table #table [dataSource]="dataSource">
+    <mat-table class="expensesTable" #table [dataSource]="dataSource">
+
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-        <mat-row *matRowDef="let row; let columns; let columnNames;"></mat-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="details">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let expenses;">
+                <i class="material-icons" routerLink="/expenses/detail/{{expenses.ExpenseId}}">library_books</i>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Company">
+            <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+            <mat-cell *matCellDef="let expenses;">{{expenses.Company}}</mat-cell>
+        </ng-container>
 
         <ng-container matColumnDef="Description">
             <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
-            <mat-cell *matCellDef="let expense;">{{expense.Description}}</mat-cell>
+            <mat-cell *matCellDef="let expenses;">{{expenses.Description}}</mat-cell>
         </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let expenses;">{{expenses.Amount}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Month">
+            <mat-header-cell *matHeaderCellDef>Month</mat-header-cell>
+            <mat-cell *matCellDef="let expenses;">{{expenses.Month}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Year">
+            <mat-header-cell *matHeaderCellDef>Year</mat-header-cell>
+            <mat-cell *matCellDef="let expenses;">{{expenses.Year}}</mat-cell>
+        </ng-container>
+
+        <mat-cell *matCellDef="let expenses;">
+            <i class="material-icons" routerLink="/expenses/edit/{{expenses.ExpenseId}}">edit</i>
+            <i class="material-icons" routerLink="/expenses/delete/{{expenses.ExpenseId}}">delete</i>
+        </mat-cell>
 
     </mat-table>
 </div>

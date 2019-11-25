@@ -1,7 +1,12 @@
-<mat-toolbar color="primary">
-    <span>MoneyMe</span>
-    <a routerLink="/expenses">Expenses</a>
-    <span class="flex-filler"></span>
+<!-- <mat-toolbar color="primary"> -->
+<mat-toolbar >
+    <span><a routerLink="/login"><img class="logo" src="../../../assets/img/redBadgeProject02tp.png" /></a></span>
+
+    <span class="flex-filler">
+        <button mat-button class="nav-link"routerLink="/expenses">Expenses</button>
+        <button mat-button class="nav-link"routerLink="/futureFun">Future Fun</button>
+    </span>
+
     <button mat-button class="nav-btn" routerLink="/register">Register</button>
     <button mat-button class="nav-btn" routerLink="/login">Login</button>
 </mat-toolbar>

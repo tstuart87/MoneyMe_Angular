@@ -1,0 +1,29 @@
+<h1>Edit Future Fun</h1>
+<hr />
+
+<div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+        <div>
+            <div hidden>
+                <input matInput placeHolder="FunId" formControlName="FunId" type="number" required [value]="futureFun.FunId" />
+            </div>
+            <div hidden>
+                <input matInput placeHolder="OwnerId" formControlName="OwnerId" type="text" required [value]="futureFun.OwnerId" />
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Description" formControlName="Description" type="text" required [value]="futureFun.Description" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Amount" formControlName="Amount" type="number" required [value]="futureFun.Amount" />
+                </mat-form-field>
+            </div>
+
+        </div>
+        <button mat-raised-button class="nav-btn" type="submit">Save</button>
+    </form>
+</div>
+
+<a mat-button routerLink="/futureFun">Back to Future Fun List</a>

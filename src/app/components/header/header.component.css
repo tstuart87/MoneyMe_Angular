@@ -4,6 +4,25 @@
 
 .nav-btn {
     margin-right: 0.5em;
-    background-color: #132584;
+    background-color: black;
     color: white;
+}
+
+img.logo {
+    width: 50px;
+    padding-top: 8px;
+}
+
+mat-toolbar {
+    background-color: #15271d;
+}
+
+.nav-link {
+    background-color: #15271d;
+    color: white;
+    margin-left: 25px;
+}
+
+.nav-link:hover {
+    border: 1px solid white;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExpensesService } from 'src/app/services/expenses.service';
-import { Expense } from 'src/app/models/Expenses';
+import { Expenses } from 'src/app/models/Expenses';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -12,12 +12,13 @@ export class ExpensesIndexComponent implements OnInit {
 
   constructor(private expensesService: ExpensesService) { }
 
-  columnNames = ['OwnerId', 'Company', 'Description', 'Amount', 'Year', 'ExpenseId', 'Month'];
-  dataSource: MatTableDataSource<Expense>;
+  columnNames = ['Company', 'Description', 'Amount', 'Month', 'Year'];
+  dataSource: MatTableDataSource<Expenses>;
 
   ngOnInit() {
-    this.expensesService.getExpenses().subscribe((expenses: Expense[]) => {
-      this.dataSource = new MatTableDataSource<Expense>(expenses);
+    this.expensesService.getExpenses().subscribe((expenses: Expenses[]) => {
+      this.dataSource = new MatTableDataSource<Expenses>(expenses);
+      console.log(expenses);
     });
   }
 }

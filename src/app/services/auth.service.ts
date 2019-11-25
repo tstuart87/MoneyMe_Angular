@@ -22,17 +22,17 @@ export class AuthService {
 
   login(loginInfo) {
     const authString =
-    `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
+      `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
     return this.http.post(`${Api_Url}/token`, authString).subscribe((token: Token) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigateByUrl('/expenses'); //change where this logging in navigates to, eventually
+      this.router.navigate(['/expenses']);
     });
   }
 
   currentUser(): Observable<Object> {
-    if (!localStorage.getItem('id_token')){
+    if (!localStorage.getItem('id_token')) {
       return new Observable(observer => observer.next(false));
     }
 
@@ -42,9 +42,8 @@ export class AuthService {
   logout(){
     localStorage.clear();
     this.isLoggedIn.next(false);
-
     this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
-    this.router.navigateByUrl('/login');
+    this.router.navigate(['/login']);
   }
 
   private setHeaders(): HttpHeaders {
