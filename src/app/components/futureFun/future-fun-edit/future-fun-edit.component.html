@@ -1,23 +1,37 @@
 <h1>Edit Future Fun</h1>
 <hr />
 
-<div>
+<div *ngIf="futureFun">
     <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
         <div>
-            <div hidden>
+            <!-- <div hidden>
                 <input matInput placeHolder="FunId" formControlName="FunId" type="number" required [value]="futureFun.FunId" />
             </div>
             <div hidden>
                 <input matInput placeHolder="OwnerId" formControlName="OwnerId" type="text" required [value]="futureFun.OwnerId" />
-            </div>
+            </div> -->
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Description" formControlName="Description" type="text" required [value]="futureFun.Description" />
+                    <input matInput placeholder="Description" formControlName="Description" type="text" required
+                        [value]="futureFun.Description" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Amount" formControlName="Amount" type="number" required [value]="futureFun.Amount" />
+                    <input matInput placeholder="Amount" formControlName="Amount" type="number" required
+                        [value]="futureFun.Amount" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Month" formControlName="Month" type="number" required
+                        [value]="futureFun.Info[0].Month" />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Year" formControlName="Year" type="number" required
+                        [value]="futureFun.Info[0].Year" />
                 </mat-form-field>
             </div>
 
