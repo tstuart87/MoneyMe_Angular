@@ -13,8 +13,18 @@
                 <input matInput placeholder="Amount" formControlName="Amount" type="Amount" />
             </mat-form-field>
         </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Month" formControlName="Month" type="number" />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Year" formControlName="Year" type="number" />
+            </mat-form-field>
+        </div>
     </div>
-    <button mat-raised-button class="nav-btn" type="submit">Create Future Fun</button>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Future Fun</button>
 </form>
 
-<a mat-button routerLink="/expenses">Back to Future Fun List</a>
+<a mat-button routerLink="/futureFun">Back to Future Fun List</a>

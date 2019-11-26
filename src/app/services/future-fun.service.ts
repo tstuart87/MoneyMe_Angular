@@ -29,7 +29,7 @@ export class FutureFunService {
   }
 
   deleteFutureFun(id: number) {
-    return this.http.delete(`${Api_Url}/FutureFun/${id}`, { headers: this.getHeaders() });
+    return this.http.delete(`${Api_Url}/api/FutureFun/${id}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
