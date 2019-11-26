@@ -24,7 +24,7 @@ export interface Debt {
     Amount: number;
     Year?: number;
     Month?: Months;
-    Info?: Array<MonthlyBasicInfo>;
+    Info?: MonthlyBasicInfo;
     OldMonth?: Months;
     NewMonth?: Months;
     OldYear?: number;

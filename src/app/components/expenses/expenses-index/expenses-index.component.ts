@@ -12,7 +12,7 @@ export class ExpensesIndexComponent implements OnInit {
 
   constructor(private expensesService: ExpensesService) { }
 
-  columnNames = ['Company', 'Description', 'Amount', 'Month', 'Year'];
+  columnNames = ['Company', 'Description', 'Amount', 'Month', 'Year', 'buttons'];
   dataSource: MatTableDataSource<Expenses>;
 
   ngOnInit() {
