@@ -19,6 +19,7 @@ mat-toolbar {
 
 .nav-link {
     background-color: #15271d;
+    border: 1px solid #15271d;
     color: white;
     margin-left: 25px;
 }

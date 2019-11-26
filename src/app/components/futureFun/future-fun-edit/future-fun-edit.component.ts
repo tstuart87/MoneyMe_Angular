@@ -39,7 +39,7 @@ export class FutureFunEditComponent implements OnInit {
       FunId: this.editForm.value.FunId,
       Description: this.editForm.value.Description,
       Amount: this.editForm.value.Amount,
-      OwnerId: this.editForm.value.OwnerId
+      OwnerId: this.editForm.value.OwnerId,
     };
     this.futureFunService.updateFutureFun(updatedFutureFun).subscribe(() => {
       this.router.navigate(['/futureFun']);

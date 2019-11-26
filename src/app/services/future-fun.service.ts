@@ -13,23 +13,23 @@ export class FutureFunService {
   constructor(private http: HttpClient) { }
 
   getFutureFun(): Observable<FutureFun[]> {
-    return this.http.get<FutureFun[]>(`${Api_Url}/api/FutureFun`, { headers: this.getHeaders() });
+    return this.http.get<FutureFun[]>(`${Api_Url}/api/futureFun`, { headers: this.getHeaders() });
   }
 
   createFutureFun(futureFun: FutureFun) {
-    return this.http.post(`${Api_Url}/api/FutureFun`, futureFun, { headers: this.getHeaders() });
+    return this.http.post(`${Api_Url}/api/futureFun`, futureFun, { headers: this.getHeaders() });
   }
 
   getFutureFunById(id) {
-    return this.http.get(`${Api_Url}/api/FutureFun/${id}`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/api/futureFun/${id}`, { headers: this.getHeaders() });
   }
 
   updateFutureFun(futureFun: FutureFun) {
-    return this.http.put(`${Api_Url}/api/FutureFun`, futureFun, { headers: this.getHeaders() });
+    return this.http.put(`${Api_Url}/api/futureFun`, futureFun, { headers: this.getHeaders() });
   }
 
   deleteFutureFun(id: number) {
-    return this.http.delete(`${Api_Url}/FutureFun/${id}`, { headers: this.getHeaders() });
+    return this.http.delete(`${Api_Url}/futureFun/${id}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
