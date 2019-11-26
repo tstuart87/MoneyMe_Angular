@@ -1,0 +1,109 @@
+<h1>Budget</h1>
+<a mat-raised-button class="nav-btn" routerLink="/Budget/create">Create New</a>
+<hr />
+
+<div>
+    <mat-table #table [dataSource]="dataSourceTwo">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Incomes</mat-header-cell>
+            <mat-cell *matCellDef="let incomes;">{{incomes.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let incomes;">{{incomes.Amount}}</mat-cell>
+        </ng-container>
+
+    </mat-table>
+</div>
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Debts</mat-header-cell>
+            <mat-cell *matCellDef="let debts;">{{debts.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let debts;">{{debts.Amount}}</mat-cell>
+        </ng-container>
+    </mat-table>
+</div>
+
+<div>
+    <mat-table #table [dataSource]="dataSourceThree">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Future Fun</mat-header-cell>
+            <mat-cell *matCellDef="let funs;">{{funs.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let funs;">{{funs.Amount}}</mat-cell>
+        </ng-container>
+    </mat-table>
+</div>
+
+<div>
+    <mat-table #table [dataSource]="dataSourceFour">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Expenses</mat-header-cell>
+            <mat-cell *matCellDef="let expense;">{{expense.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let expense;">{{expense.Amount}}</mat-cell>
+        </ng-container>
+    </mat-table>
+</div>
+
+<div>
+    <mat-table #table [dataSource]="dataSourceFive">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Net Income</mat-header-cell>
+            <mat-cell *matCellDef="let excess;">{{excess.Excess}}</mat-cell>
+        </ng-container>
+    </mat-table>
+</div>
+
+
+
+<!-- <ng-container matColumnDef="Month">
+    <mat-header-cell *matHeaderCellDef>Month</mat-header-cell>
+    <mat-cell *matCellDef="let Budget;">{{Budget.Info[0].Month}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="Year">
+    <mat-header-cell *matHeaderCellDef>Year</mat-header-cell>
+    <mat-cell *matCellDef="let Budget;">{{Budget.Info[0].Year}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="buttons">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let Budget;">
+        <i class="material-icons" routerLink="/Income/edit/{{Income.IncomeId}}">edit</i>
+        <i class="material-icons" routerLink="/Income/delete/{{Income.IncomeId}}">delete</i>
+    </mat-cell>
+</ng-container> -->
