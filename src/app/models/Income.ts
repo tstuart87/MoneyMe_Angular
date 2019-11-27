@@ -36,10 +36,10 @@ export interface MonthlyBasicInfo {
     TotalDebt?: number;
     TotalFun?: number;
     TotalExpenses?: number;
-    Income?: IncomeModel;
-    Debt?: DebtModel;
-    Expense?: ExpenseModel;
-    Fun?: FunModel;
+    Income?: Array<IncomeModel>;
+    Debt?: Array<DebtModel>;
+    Expense?: Array<ExpenseModel>;
+    Fun?: Array<FunModel>;
 }
 export interface IncomeModel {
     IncomeId?: number;

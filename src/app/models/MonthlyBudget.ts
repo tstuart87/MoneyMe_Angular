@@ -38,7 +38,7 @@ export interface MonthlyBasicInfo {
     TotalDebt?: number;
     TotalFun?: number;
     TotalExpenses?: number;
-    Income?: IncomeModel;
+    Income?: Array<string>;
     Debt?: DebtModel;
     Expense?: ExpenseModel;
     Fun?: FunModel;

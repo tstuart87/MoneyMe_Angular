@@ -49,6 +49,7 @@ import { IncomeService } from './services/income.service';
 
 import { MonthlyBudgetService } from './services/monthly-budget.service';
 import { MonthlybudgetIndexComponent } from './components/monthlybudget/monthlybudget-index/monthlybudget-index.component';
+// import { MonthlybudgetEditComponent } from './components/monthlybudget/monthlybudget-excess/monthlybudget-excess.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -122,7 +123,8 @@ const routes = [
     IncomeDetailComponent,
     IncomeEditComponent,
     IncomeIndexComponent,
-    MonthlybudgetIndexComponent
+    MonthlybudgetIndexComponent,
+    // MonthlybudgetEditComponent
 
   ],
   imports: [
