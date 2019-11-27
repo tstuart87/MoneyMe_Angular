@@ -18,7 +18,7 @@ export class IncomeEditComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this.incomeService.getIncomeById(params.get('id')).subscribe((income: Income) =>{
         this.income = income;
-        console.log(income)
+        console.log(income);
         this.createForm();
       });
     });
