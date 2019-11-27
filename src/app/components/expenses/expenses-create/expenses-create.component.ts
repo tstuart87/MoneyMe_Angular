@@ -25,14 +25,14 @@ export class ExpensesCreateComponent implements OnInit {
       Description: new FormControl,
       Amount: new FormControl,
       Month: new FormControl,
-      // Year: new FormControl,
+      Year: new FormControl,
     });
   }
 
   onSubmit() {
-    console.log(this.expensesForm.value);
     this.expensesService.createExpenses(this.expensesForm.value).subscribe(() => {
       this.router.navigate(['/expenses']);
+      // console.log(this.expensesForm.value);
     });
   }
 }

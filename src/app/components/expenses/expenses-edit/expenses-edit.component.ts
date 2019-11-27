@@ -43,8 +43,10 @@ export class ExpensesEditComponent implements OnInit {
       Company: this.editForm.value.Company,
       Description: this.editForm.value.Description,
       Amount: this.editForm.value.Amount,
-      Month: this.editForm.value.Month,
-      Year: this.editForm.value.Year,
+      OldMonth: this.expenses.Info[0].Month,
+      NewYear: this.editForm.value.Year,
+      OldYear: this.expenses.Info[0].Year,
+      NewMonth: this.editForm.value.Month,
       OwnerId: this.editForm.value.OwnerId
     };
     this.expensesService.updateExpenses(updatedExpenses).subscribe(() => {

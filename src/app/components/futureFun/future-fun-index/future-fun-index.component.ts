@@ -12,7 +12,7 @@ export class FutureFunIndexComponent implements OnInit {
 
   constructor(private futureFunService: FutureFunService) { }
 
-  columnNames = ['FunId', 'OwnerId', 'Description', 'Amount', 'Buttons'];
+  columnNames = ['Description', 'Amount', 'Month', 'Year', 'buttons'];
   dataSource: MatTableDataSource<FutureFun>;
 
   ngOnInit() {

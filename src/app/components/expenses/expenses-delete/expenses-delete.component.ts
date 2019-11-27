@@ -16,6 +16,7 @@ export class ExpensesDeleteComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       this.expensesService.getExpensesById(params.get('id')).subscribe((expenses: Expenses) => {
         this.expenses = expenses;
+        console.log(expenses);
       });
     });
   }

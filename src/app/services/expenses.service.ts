@@ -29,7 +29,7 @@ export class ExpensesService {
   }
 
   deleteExpenses(id: number) {
-    return this.http.delete(`${Api_Url}/expenses/${id}`, { headers: this.getHeaders() });
+    return this.http.delete(`${Api_Url}/api/Expenses/${id}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {

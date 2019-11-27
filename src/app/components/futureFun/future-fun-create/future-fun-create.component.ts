@@ -23,6 +23,8 @@ export class FutureFunCreateComponent implements OnInit {
     this.futureFunForm = this.form.group({
       Description: new FormControl,
       Amount: new FormControl,
+      Month: new FormControl,
+      Year: new FormControl
     });
   }
 

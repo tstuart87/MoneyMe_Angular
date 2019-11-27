@@ -18,6 +18,13 @@ export interface FutureFun {
     OwnerId: string;
     Description: string;
     Amount: number;
+    Info?: MonthlyBasicInfo;
+    Month?: number;
+    Year?: number;
+    OldMonth?: number;
+    OldYear?: number;
+    NewMonth?: number;
+    NewYear?: number;
 }
 
 export interface MonthlyBasicInfo {
@@ -35,7 +42,6 @@ export interface MonthlyBasicInfo {
     Expense?: ExpenseModel;
     Fun?: FunModel;
 }
-
 export interface IncomeModel {
     IncomeId?: number;
     OwnerId?: number;

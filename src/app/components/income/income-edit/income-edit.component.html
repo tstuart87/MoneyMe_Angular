@@ -1,42 +1,41 @@
-<h1>Edit Future Fun</h1>
+<h1>Edit Income</h1>
 <hr />
 
-<div *ngIf="futureFun">
+<div *ngIf="income">
     <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
         <div>
-            <!-- <div hidden>
-                <input matInput placeHolder="FunId" formControlName="FunId" type="number" required [value]="futureFun.FunId" />
-            </div>
             <div hidden>
-                <input matInput placeHolder="OwnerId" formControlName="OwnerId" type="text" required [value]="futureFun.OwnerId" />
-            </div> -->
+                <input matInput placeHolder="IncomeId" formControlName="IncomeId" type="number" required
+                    [value]="income.IncomeId" />
+            </div>
             <div>
                 <mat-form-field>
                     <input matInput placeholder="Description" formControlName="Description" type="text" required
-                        [value]="futureFun.Description" />
+                        [value]="income.Description" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
                     <input matInput placeholder="Amount" formControlName="Amount" type="number" required
-                        [value]="futureFun.Amount" />
+                        [value]="income.Amount" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
                     <input matInput placeholder="Month" formControlName="Month" type="number" required
-                        [value]="futureFun.Info[0].Month" />
+                        [value]="income.Info[0].Month" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
                     <input matInput placeholder="Year" formControlName="Year" type="number" required
-                        [value]="futureFun.Info[0].Year" />
+                        [value]="income.Info[0].Year" />
                 </mat-form-field>
             </div>
+
         </div>
-        <button mat-raised-button class="nav-btn" type="submit">Save</button>
+        <button mat-raised-button color="warn" (click)="onSubmit">Save</button>
     </form>
 </div>
 
-<a mat-button routerLink="/futureFun">Back to Future Fun List</a>
+<button mat-raised-button color="primary" routerLink="/Income">Back to Income List</button>

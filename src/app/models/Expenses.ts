@@ -18,12 +18,15 @@ export interface Expenses {
     Company: string;
     Description: string;
     Amount: number;
-    Year: number;
-    Month: Months;
-    ExpenseId: number;
-    Info?: Array<MonthlyBasicInfo>;
+    Year?: number;
+    Month?: Months;
+    ExpenseId?: number;
+    OldMonth?: number;
+    OldYear?: number;
+    NewMonth?: number;
+    NewYear?: number;
+    Info?: MonthlyBasicInfo;
 }
-
 export interface MonthlyBasicInfo {
     MonthId?: number;
     Year?: number;
@@ -39,7 +42,6 @@ export interface MonthlyBasicInfo {
     Expense?: ExpenseModel;
     Fun?: FunModel;
 }
-
 export interface IncomeModel {
     IncomeId?: number;
     OwnerId?: number;

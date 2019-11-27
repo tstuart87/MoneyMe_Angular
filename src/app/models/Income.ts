@@ -1,6 +1,3 @@
-//import { IncomingMessage } from 'http';
-//import { Expense } from './Expenses';
-
 enum Months {
     January = 1,
     February,
@@ -16,15 +13,14 @@ enum Months {
     December
 }
 
-export interface Debt {
-    DebtId?: number;
+export interface Income {
+    IncomeId?: number;
     OwnerId?: number;
-    Company: string;
     Description: string;
     Amount: number;
     Year?: number;
     Month?: Months;
-    Info?: MonthlyBasicInfo;
+    Info?: Array<MonthlyBasicInfo>;
     OldMonth?: Months;
     NewMonth?: Months;
     OldYear?: number;
@@ -55,7 +51,6 @@ export interface IncomeModel {
 export interface DebtModel {
     DebtId?: number;
     OwnerId?: number;
-    Company: string;
     Description: string;
     Amount: number;
     Year: number;
@@ -64,7 +59,6 @@ export interface DebtModel {
 export interface ExpenseModel {
     ExpenseId?: number;
     OwnerId?: number;
-    Company: string;
     Description: string;
     Amount: number;
     Year: number;

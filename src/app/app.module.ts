@@ -40,6 +40,13 @@ import { DebtDetailComponent } from './components/Debt/debt-detail/debt-detail.c
 import { DebtEditComponent } from './components/Debt/debt-edit/debt-edit.component';
 import { DebtDeleteComponent } from './components/Debt/debt-delete/debt-delete.component';
 
+import { IncomeIndexComponent } from './components/income/income-index/income-index.component';
+import { IncomeCreateComponent } from './components/income/income-create/income-create.component';
+import { IncomeDetailComponent } from './components/income/income-detail/income-detail.component';
+import { IncomeEditComponent } from './components/income/income-edit/income-edit.component';
+import { IncomeDeleteComponent } from './components/income/income-delete/income-delete.component';
+import { IncomeService } from './services/income.service';
+
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
@@ -68,6 +75,13 @@ const routes = [
     { path: 'edit/:id', component: DebtEditComponent },
     { path: 'delete/:id', component: DebtDeleteComponent }
   ]},
+  { path: 'Income', children: [
+    { path: '', component: IncomeIndexComponent },
+    { path: 'create', component: IncomeCreateComponent },
+    { path: 'detail/:id', component: IncomeDetailComponent },
+    { path: 'edit/:id', component: IncomeEditComponent },
+    { path: 'delete/:id', component: IncomeDeleteComponent }
+  ]},
   { path: '**', component: RegistrationComponent }
 
 ];
@@ -92,7 +106,12 @@ const routes = [
     DebtCreateComponent,
     DebtDetailComponent,
     DebtEditComponent,
-    DebtDeleteComponent
+    DebtDeleteComponent,
+    IncomeCreateComponent,
+    IncomeDeleteComponent,
+    IncomeDetailComponent,
+    IncomeEditComponent,
+    IncomeIndexComponent
 
   ],
   imports: [
@@ -114,7 +133,8 @@ const routes = [
     AuthService,
     FutureFunService,
     ExpensesService,
-    DebtService
+    DebtService,
+    IncomeService
   ],
   exports: [
   ],

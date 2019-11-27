@@ -31,6 +31,8 @@ export class FutureFunEditComponent implements OnInit {
       FunId: new FormControl(this.futureFun.FunId),
       Description: new FormControl(this.futureFun.Description),
       Amount: new FormControl(this.futureFun.Amount),
+      Month: new FormControl(this.futureFun.Month),
+      Year: new FormControl(this.futureFun.Year)
     });
   }
 
@@ -40,6 +42,10 @@ export class FutureFunEditComponent implements OnInit {
       Description: this.editForm.value.Description,
       Amount: this.editForm.value.Amount,
       OwnerId: this.editForm.value.OwnerId,
+      OldMonth: this.futureFun.Info[0].Month,
+      NewMonth: this.editForm.value.Month,
+      OldYear: this.futureFun.Info[0].Year,
+      NewYear: this.editForm.value.Year,
     };
     this.futureFunService.updateFutureFun(updatedFutureFun).subscribe(() => {
       this.router.navigate(['/futureFun']);

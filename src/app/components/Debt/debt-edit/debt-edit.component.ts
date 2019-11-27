@@ -31,8 +31,9 @@ export class DebtEditComponent implements OnInit {
       Company: new FormControl(this.debt.Company),
       Description: new FormControl(this.debt.Description),
       Amount: new FormControl(this.debt.Amount),
-      Month: new FormControl(this.debt.Info),
-      Year: new FormControl(this.debt.Info)
+      Month: new FormControl(this.debt.Month),
+      Year: new FormControl(this.debt.Year),
+      DebtId: new FormControl(this.debt.DebtId)
     });
   }
 
@@ -41,13 +42,15 @@ export class DebtEditComponent implements OnInit {
       Company: this.editDebtForm.value.Company,
       Description: this.editDebtForm.value.Description,
       Amount: this.editDebtForm.value.Amount,
-      Month: this.editDebtForm.value.Info.Months.NewMonth,
-      Year: this.editDebtForm.value.Info.Months.NewYear,
-      OldMonth: this.debt.Month,
-      OldYear: this.debt.Year
+      OldMonth: this.debt.Info[0].Month,
+      OldYear: this.debt.Info[0].Year,
+      NewMonth: this.editDebtForm.value.Month,
+      NewYear: this.editDebtForm.value.Year,
+      DebtId: this.editDebtForm.value.DebtId
     };
     this.debtService.updateDebt(updatedDebt).subscribe(() => {
       this.router.navigate(['/debt']);
+      console.log(updatedDebt);
     });
   }
 
