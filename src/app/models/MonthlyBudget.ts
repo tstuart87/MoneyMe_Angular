@@ -13,19 +13,20 @@ enum Months {
     December
 }
 
-export interface Expenses {
-    OwnerId: string;
+export interface MonthlyBudget {
+    DebtId?: number;
+    OwnerId?: number;
     Company: string;
     Description: string;
     Amount: number;
     Year?: number;
     Month?: Months;
-    ExpenseId?: number;
-    OldMonth?: number;
-    OldYear?: number;
-    NewMonth?: number;
-    NewYear?: number;
     Info?: MonthlyBasicInfo;
+    OldMonth?: Months;
+    NewMonth?: Months;
+    OldYear?: number;
+    NewYear?: number;
+    Excess?: number;
 }
 export interface MonthlyBasicInfo {
     MonthId?: number;
@@ -37,10 +38,10 @@ export interface MonthlyBasicInfo {
     TotalDebt?: number;
     TotalFun?: number;
     TotalExpenses?: number;
-    Income?: Array<IncomeModel>;
-    Debt?: Array<DebtModel>;
-    Expense?: Array<ExpenseModel>;
-    Fun?: Array<FunModel>;
+    Income?: Array<string>;
+    Debt?: DebtModel;
+    Expense?: ExpenseModel;
+    Fun?: FunModel;
 }
 export interface IncomeModel {
     IncomeId?: number;

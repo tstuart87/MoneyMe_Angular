@@ -47,6 +47,10 @@ import { IncomeEditComponent } from './components/income/income-edit/income-edit
 import { IncomeDeleteComponent } from './components/income/income-delete/income-delete.component';
 import { IncomeService } from './services/income.service';
 
+import { MonthlyBudgetService } from './services/monthly-budget.service';
+import { MonthlybudgetIndexComponent } from './components/monthlybudget/monthlybudget-index/monthlybudget-index.component';
+// import { MonthlybudgetEditComponent } from './components/monthlybudget/monthlybudget-excess/monthlybudget-excess.component';
+
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
@@ -82,6 +86,13 @@ const routes = [
     { path: 'edit/:id', component: IncomeEditComponent },
     { path: 'delete/:id', component: IncomeDeleteComponent }
   ]},
+  { path: 'Monthly', children: [
+    { path: '', component: MonthlybudgetIndexComponent },
+    // { path: 'create', component:  },
+    // { path: 'detail/:id', component:  },
+    // { path: 'edit/:id', component:  },
+    // { path: 'delete/:id', component:  }
+  ]},
   { path: '**', component: RegistrationComponent }
 
 ];
@@ -111,7 +122,9 @@ const routes = [
     IncomeDeleteComponent,
     IncomeDetailComponent,
     IncomeEditComponent,
-    IncomeIndexComponent
+    IncomeIndexComponent,
+    MonthlybudgetIndexComponent,
+    // MonthlybudgetEditComponent
 
   ],
   imports: [
@@ -134,7 +147,8 @@ const routes = [
     FutureFunService,
     ExpensesService,
     DebtService,
-    IncomeService
+    IncomeService,
+    MonthlyBudgetService
   ],
   exports: [
   ],

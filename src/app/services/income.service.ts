@@ -19,7 +19,6 @@ export class IncomeService {
     return this.http.get(`${Api_Url}api/Income/${id}`, { headers: this.getHeaders() });
   }
 
-
   createIncome(income: Income) {
 return this.http.post(`${Api_Url}api/Income`, income, {headers: this.getHeaders() });
   }
