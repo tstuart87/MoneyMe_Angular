@@ -9,20 +9,30 @@
 }
 
 img.logo {
-    width: 50px;
-    padding-top: 8px;
+    width: 40px;
+    margin-right: 10px;
 }
 
-mat-toolbar {
-    background-color: #15271d;
+.navbar {
+    background-color: #182f22 !important;
 }
 
 .nav-link {
-    background-color: #15271d;
-    color: white;
-    margin-left: 25px;
+    background-color: #182f22 !important;
+    color: white !important;
+    margin-right: 18px;
+    margin-left: 2px;
 }
 
 .nav-link:hover {
-    border: 1px solid white;
+    background-color: #15291e !important;
+    border-radius: 6px;
+}
+
+.red {
+    color: #b73c3c !important;
+}
+
+nav {
+    background-color: #182f22;
 }

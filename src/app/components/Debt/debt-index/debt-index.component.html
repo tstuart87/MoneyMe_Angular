@@ -1,5 +1,5 @@
 <h1>Your Debt</h1>
-<a mat-raised-button color="primary" routerLink="/debt/create">Create New</a>
+<a mat-raised-button class="nav-btn" routerLink="/debt/create">Create New</a>
 <hr />
 
 
@@ -53,7 +53,7 @@
         <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let debt;">
-                <i class="material-icons" routerLink="/debt/edit/{{debt.DebtId}}">edit</i>
+                <a class="material-icons" routerLink="/debt/edit/{{debt.DebtId}}">edit</a>
                 <i class="material-icons" routerLink="/debt/delete/{{debt.DebtId}}">delete</i>
             </mat-cell>
         </ng-container>
