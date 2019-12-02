@@ -15,4 +15,6 @@ enum Months {
 export interface Excess {
     Month?: Months;
     Year?: number;
+    Amount: number;
+    OwnerId?: number;
 }
