@@ -1,6 +1,10 @@
+
+<div *ngIf="all">
+    <span>{{excess}}</span>
+</div>
+
 <h1>Budget</h1>
 
-<h2>{{excess}}</h2>
 <hr />
 
 <div>
@@ -29,7 +33,7 @@
             <mat-cell *matCellDef="let expense;">{{expense.Description}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="Amount">
-            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
             <mat-cell *matCellDef="let expense;">{{expense.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
@@ -46,7 +50,7 @@
             <mat-cell *matCellDef="let debt;">{{debt.Description}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="Amount">
-            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
             <mat-cell *matCellDef="let debt;">{{debt.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
@@ -63,7 +67,7 @@
             <mat-cell *matCellDef="let fun;">{{fun.Description}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="Amount">
-            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
             <mat-cell *matCellDef="let fun;">{{fun.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
@@ -71,22 +75,25 @@
     </mat-table>
 </div>
 
-<div>
-    <mat-table #table [dataSource]="excess">
+<h1>Monthly Excess</h1>
+
+<ng-container *ngIf='all'>{{all.Excess}}</ng-container>
+
+<!-- <div>
+    <mat-table #table >
 
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
 
         <ng-container matColumnDef="Description">
-                <mat-header-cell *matHeaderCellDef>Monthly Excess</mat-header-cell>
-                <mat-cell *matCellDef="let excess;">{{excess.Description}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef>Net Excess</mat-header-cell>
+                <mat-cell *matCellDef="let fun;">pls</mat-cell>
             </ng-container>
 
         <ng-container matColumnDef="Amount">
-            <mat-header-cell *matHeaderCellDef>Net Excess</mat-header-cell>
-            <mat-cell *matCellDef="let excess;">{{excess.Amount}}</mat-cell>
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let fun;" >plllllll</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
     </mat-table>
-
-</div>
+</div> -->
