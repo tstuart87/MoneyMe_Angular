@@ -7,7 +7,13 @@
 
 <hr />
 
-<div>
+<div class="detail">
+    <h1>Monthly Excess</h1>
+    <ng-container *ngIf='all'>{{all.Excess}}</ng-container>
+</div>
+<br />
+
+<div class="detail">
     <mat-table #table [dataSource]="income">
 
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
@@ -24,7 +30,9 @@
     </mat-table>
 </div>
 
-<div>
+<br />
+
+<div class="detail">
     <mat-table #table [dataSource]="expense">
 
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
@@ -41,7 +49,9 @@
     </mat-table>
 </div>
 
-<div>
+<br />
+
+<div class="detail">
     <mat-table #table [dataSource]="debt">
 
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
@@ -58,7 +68,9 @@
     </mat-table>
 </div>
 
-<div>
+<br />
+
+<div class="detail">
     <mat-table #table [dataSource]="fun">
 
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
@@ -74,10 +86,7 @@
 
     </mat-table>
 </div>
-
-<h1>Monthly Excess</h1>
-
-<ng-container *ngIf='all'>{{all.Excess}}</ng-container>
+<br />
 
 <!-- <div>
     <mat-table #table >

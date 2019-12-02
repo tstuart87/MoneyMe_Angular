@@ -34,21 +34,19 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/Monthly">Monthly</a>
+                <a *ngIf="isLoggedIn" class="nav-link" routerLink="/Monthly">Monthly</a>
             </li>
             <li class="nav-item">
-
-                <a class="nav-link" routerLink="/Income">Income</a>
-
+                <a *ngIf="isLoggedIn" class="nav-link" routerLink="/Income">Income</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/expenses">Expenses</a>
+                <a *ngIf="isLoggedIn" class="nav-link" routerLink="/expenses">Expenses</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/futureFun">Future Fun</a>
+                <a *ngIf="isLoggedIn" class="nav-link" routerLink="/futureFun">Future Fun</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/debt">Debt</a>
+                <a *ngIf="isLoggedIn" class="nav-link" routerLink="/debt">Debt</a>
             </li>
             <li class="nav-item">
                 <a *ngIf="!isLoggedIn" class="nav-link red" routerLink="/register">Register</a>
@@ -57,7 +55,10 @@
                 <a *ngIf="!isLoggedIn" class="nav-link red" routerLink="/login">Login</a>
             </li>
             <li class="nav-item">
-                <a *ngIf="!isLoggedIn" class="nav-link red" (click)="logout()" routerLink="/login">Logout</a>
+                <a *ngIf="isLoggedIn" class="nav-link red" >{{UserInfo.Email}}</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="isLoggedIn" class="nav-link red" (click)="authService.logout()" routerLink="/login">Logout</a>
             </li>
         </ul>
     </div>

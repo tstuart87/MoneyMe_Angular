@@ -9,22 +9,26 @@
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Description" formControlName="Description" type="text" [value]="income.Description" />
+                    <p>Description:</p>
+                    <input matInput formControlName="Description" type="text" [value]="income.Description" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Amount" formControlName="Amount" type="number" [value]="income.Amount" />
+                    <p>Amount:</p>
+                    <input matInput formControlName="Amount" type="number" [value]="income.Amount" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Month" formControlName="Month" type="number" [value]="income.Info[0].Month" />
+                    <p>Month:</p>
+                    <input matInput formControlName="Month" type="number" [value]="income.Info[0].Month" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Year" formControlName="Year" type="number" [value]="income.Info[0].Year" />
+                    <p>Year:</p>
+                    <input matInput formControlName="Year" type="number" [value]="income.Info[0].Year" />
                 </mat-form-field>
             </div>
         </div>
@@ -33,4 +37,4 @@
     </form>
 </div>
 
-<button mat-raised-button color="primary" routerLink="/Income">Back to Income List</button>
+<button mat-button routerLink="/Income">Back to Income List</button>
