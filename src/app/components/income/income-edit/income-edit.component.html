@@ -5,7 +5,7 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
         <div>
             <div hidden>
-                <input matInput placeHolder="IncomeId" formControlName="IncomeId" type="number" [value]="income.IncomeId" />
+                <input matInput placeHolder="IncomeId" formControlName="IncomeId" type="number" required [value]="income.IncomeId" />
             </div>
             <div>
                 <mat-form-field>

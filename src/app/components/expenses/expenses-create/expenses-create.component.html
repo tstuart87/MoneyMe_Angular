@@ -12,25 +12,25 @@
         <div>
             <mat-form-field>
                 <p>Description:</p>
-                <input matInput formControlName="Description" type="Description" />
+                <input matInput formControlName="Description" type="Description" required/>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <p>Amount:</p>
-                <input matInput formControlName="Amount" type="Amount" />
+                <input matInput formControlName="Amount" type="Amount" required/>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <p>Month:</p>
-                <input matInput formControlName="Month" type="number" />
+                <input matInput formControlName="Month" min="1" max="12" type="number" required/>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <p>Year:</p>
-                <input matInput formControlName="Year" type="number" />
+                <input matInput formControlName="Year" min="2015" type="number" required/>
             </mat-form-field>
         </div>
     </div>

@@ -10,23 +10,6 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <!-- <ng-container matColumnDef="details">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let Income;">
-                <i class="material-icons" routerLink="/Income/detail/{{Income.IncomeId}}">library_books</i>
-            </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="IncomeId">
-            <mat-header-cell *matHeaderCellDef>IncomeId</mat-header-cell>
-            <mat-cell *matCellDef="let Income;">{{Income.IncomeId}}</mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="OwnerId">
-            <mat-header-cell *matHeaderCellDef>OwnerId</mat-header-cell>
-            <mat-cell *matCellDef="let Income;">{{Income.OwnerId}}</mat-cell>
-        </ng-container> -->
-
         <ng-container matColumnDef="Description">
             <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
             <mat-cell *matCellDef="let Income;">{{Income.Description}}</mat-cell>
