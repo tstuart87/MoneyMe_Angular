@@ -20,56 +20,34 @@ export class MonthlybudgetIndexComponent implements OnInit {
   editMonthlyForm: FormGroup;
   thisMonth: number = new Date().getMonth() + 1;
   thisYear: number = new Date().getFullYear();
+  resultMonth: number = new Date().getMonth() +1;
+  resultYear: number = new Date().getFullYear();
 
   constructor(private formBuilder: FormBuilder, private debtService: DebtService, private expensesService: ExpensesService, private futureFunService: FutureFunService, private monthlyBudgetService: MonthlyBudgetService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
-  columnNames = ['Description','Amount'];
-  // dataSource: MatTableDataSource<Debt>;
-  // // dataSourceTwo: MatTableDataSource<Income>;
-  // dataSourceThree: MatTableDataSource<FutureFun>;
-  // dataSourceFour: MatTableDataSource<Expenses>;
-  // dataSourceFive: MatTableDataSource<MonthlyBudget>;
+  columnNames = ['Description', 'Amount'];
+
   income: any;
   debt: any;
   expense: any;
   fun: any;
   excess: number;
-  result: Excess;
+  all: MonthlyBasicInfo;
+
   ngOnInit() {
-
-
-    // this.debtService.getDebts().subscribe((debts: Debt[]) => {
-    //   this.dataSource = new MatTableDataSource<Debt>(debts);
-    // });
-    // this.incomeService.getIncomes().subscribe((incomes: Income[]) => {
-    //   this.dataSourceTwo = new MatTableDataSource<Income>(incomes);
-    // });
-    // this.futureFunService.getFutureFun().subscribe((funs: FutureFun[]) => {
-    //   this.dataSourceThree = new MatTableDataSource<FutureFun>(funs);
-    // });
-    // this.expensesService.getExpenses().subscribe((expense: Expenses[]) => {
-    //   this.dataSourceFour = new MatTableDataSource<Expenses>(expense);
-    // });
-    // this.monthlyBudgetService.updateExcess(this.monthly).subscribe((excess: MonthlyBudget[]) => {
-    //   this.dataSourceFive = new MatTableDataSource<MonthlyBudget>(excess);
+    // this.monthlyBudgetService.updateExcess(this.thisMonth, this.thisYear).subscribe((excess: number) => {
+    //   this.excess = excess;
     // });
 
-    this.monthlyBudgetService.getMonths(this.thisMonth,this.thisYear).subscribe((all: MonthlyBasicInfo) => {
-       this.income = all.Income;
-       this.debt = all.Debt;
-       this.fun = all.Fun;
-       this.expense = all.Expense;
-       console.log(all);
-      });
-      console.log(this.thisMonth);
-      
-      this.monthlyBudgetService.updateExcess(this.result).subscribe((excess: number) => {
-        this.excess = excess;
-        console.log(excess);
-      })
+    this.monthlyBudgetService.getMonths(this.thisMonth, this.thisYear).subscribe((all: MonthlyBasicInfo) => {
+      this.all = all;
+      this.income = all.Income;
+      this.debt = all.Debt;
+      this.fun = all.Fun;
+      this.expense = all.Expense;
+      console.log(all);
+    });
+    console.log(this.thisMonth);
+
   }
-
-
-
-
 }

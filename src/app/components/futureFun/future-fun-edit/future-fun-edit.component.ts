@@ -31,8 +31,8 @@ export class FutureFunEditComponent implements OnInit {
       FunId: new FormControl(this.futureFun.FunId),
       Description: new FormControl(this.futureFun.Description),
       Amount: new FormControl(this.futureFun.Amount),
-      Month: new FormControl(this.futureFun.Month),
-      Year: new FormControl(this.futureFun.Year)
+      Month: new FormControl(this.futureFun.Info[0].Month),
+      Year: new FormControl(this.futureFun.Info[0].Year)
     });
   }
 
