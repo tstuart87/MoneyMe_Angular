@@ -59,6 +59,11 @@
             <li class="nav-item">
                 <a *ngIf="!isLoggedIn" class="nav-link red" (click)="logout()" routerLink="/login">Logout</a>
             </li>
+
+           <!-- <ng-container *ngIf='isLoggedIn'>
+               <h1>Hello:</h1>
+               <span>{{User.Email}}</span>
+            </ng-container> -->
         </ul>
     </div>
 </nav>

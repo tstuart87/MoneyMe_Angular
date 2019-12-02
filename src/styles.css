@@ -99,3 +99,12 @@ p, label {
     color: white;
     text-decoration: none;
 }
+
+.mat-header-cell {
+    color: #368559;
+}
+
+.material-icons:hover {
+    color: blue;
+    cursor: pointer;
+}
