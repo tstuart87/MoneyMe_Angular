@@ -1,7 +1,7 @@
 <h1>Delete Debt</h1>
 <hr />
 
-<div *ngIf="debt">
+<div class="delete" *ngIf="debt">
     <div>
         <label>Company: </label>
         <span>{{debt.Company}}</span>
@@ -22,6 +22,8 @@
         <label>Year: </label>
         <span>{{debt.Info[0].Year}}</span>
     </div>
-    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+    <button class="mat-raised-button" mat-raised-button color="warn" (click)="onDelete()">Delete</button>
 </div>
-<button mat-raised-button color="primary" routerLink="/debt">Back to List</button>
+
+<br />
+<button mat-button color="primary" routerLink="/debt">Back to List</button>

@@ -5,31 +5,37 @@
     <div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Company" formControlName="Company" type="Company" required />
+                <p>Company:</p>
+                <input matInput formControlName="Company" type="Company" required />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Description" formControlName="Description" type="Description" required />
+                <p>Description:</p>
+                <input matInput formControlName="Description" type="Description" required />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Amount" formControlName="Amount" type="Amount" required />
+                <p>Amount:</p>
+                <input matInput formControlName="Amount" type="Amount" required />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Month" formControlName="Month" type="number" required />
+                <p>Month:</p>
+                <input matInput formControlName="Month" type="number" required />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Year" formControlName="Year" type="number" required />
+                <p>Year:</p>
+                <input matInput formControlName="Year" type="number" required />
             </mat-form-field>
         </div>        
     </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Debt</button>
+    <button class="mat-raised-button" mat-raised-button type="submit">Create Debt</button>
 </form>
 
+<br />
 <a mat-button routerLink="/debt">Back to All Debts</a>
