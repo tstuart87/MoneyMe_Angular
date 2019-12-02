@@ -104,7 +104,6 @@ const routes = [
     { path: '', component: UserIndexComponent },
     { path: 'delete/:id', component: UserDeleteComponent }
   ]},
-
   { path: '**', component: RegistrationComponent }
 
 ];
