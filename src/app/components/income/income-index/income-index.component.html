@@ -1,5 +1,5 @@
 <h1>Income</h1>
-<a mat-raised-button class="mat-raised-button" routerLink="/income/create">Create New</a>
+<a mat-raised-button class="mat-raised-button" routerLink="/Income/create">Create New</a>
 <hr />
 
 <img class="happySadIcon" src="../../../../assets/img/incomeGood.png" />
@@ -9,23 +9,6 @@
         
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-
-        <!-- <ng-container matColumnDef="details">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let Income;">
-                <i class="material-icons" routerLink="/Income/detail/{{Income.IncomeId}}">library_books</i>
-            </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="IncomeId">
-            <mat-header-cell *matHeaderCellDef>IncomeId</mat-header-cell>
-            <mat-cell *matCellDef="let Income;">{{Income.IncomeId}}</mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="OwnerId">
-            <mat-header-cell *matHeaderCellDef>OwnerId</mat-header-cell>
-            <mat-cell *matCellDef="let Income;">{{Income.OwnerId}}</mat-cell>
-        </ng-container> -->
 
         <ng-container matColumnDef="Description">
             <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
@@ -51,8 +34,8 @@
         <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let Income;">
-                <i class="material-icons" routerLink="/income/edit/{{Income.IncomeId}}">edit</i>
-                <i class="material-icons" routerLink="/income/delete/{{Income.IncomeId}}">delete</i>
+                <i class="material-icons" routerLink="/Income/edit/{{Income.IncomeId}}">edit</i>
+                <i class="material-icons" routerLink="/Income/delete/{{Income.IncomeId}}">delete</i>
             </mat-cell>
         </ng-container>
 
