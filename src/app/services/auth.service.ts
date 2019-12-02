@@ -27,7 +27,8 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/expenses']);
+      this.router.navigate(['/Monthly']).then(() => { window.location.reload() 
+      });
     });
   }
 
@@ -39,11 +40,12 @@ export class AuthService {
     return this.http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeaders() });
   }
 
-  logout(){
+  logout() {
+    this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
     localStorage.clear();
     this.isLoggedIn.next(false);
-    this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
     this.router.navigate(['/login']);
+    location.reload();
   }
 
   private setHeaders(): HttpHeaders {
