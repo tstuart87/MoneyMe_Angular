@@ -23,6 +23,7 @@ form {
 input {
     border: 1px solid rgb(211, 207, 207) !important;
     padding: 3px !important;
+    padding-left: 12px !important;
     border-radius: 25px;
     background-color: white !important;
     text-decoration: none !important;
