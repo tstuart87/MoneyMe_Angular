@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/User';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-user-index',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserIndexComponent implements OnInit {
 
-  constructor() { }
+  columnNames = ['OwnerId', 'Email'];
+
+  dataSource: MatTableDataSource<User>;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe((users: User[])=>{
+      this.dataSource = new MatTableDataSource
+    });
   }
 
 }
