@@ -16,8 +16,8 @@ export class MonthlyBudgetService {
     return this.http.get(`${Api_Url}api/Monthly/${id}?year=${year}`, { headers: this.getHeaders() });
   }
 
-  updateExcess(month: Excess,) {
-    return this.http.put(`${Api_Url}api/MonthExcess`, {month}, {headers: this.getHeaders() });
+  updateExcess(id: number, year: number) {
+    return this.http.put(`${Api_Url}api/MonthExcess?id=${id}&year=${year}`, {headers: this.getHeaders() });
   }
 
   private getHeaders() {

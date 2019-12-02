@@ -32,8 +32,8 @@ export class IncomeEditComponent implements OnInit {
       IncomeId: new FormControl(this.income.IncomeId),
       Description: new FormControl(this.income.Description),
       Amount: new FormControl(this.income.Amount),
-      Month: new FormControl(this.income.Month),
-      Year: new FormControl(this.income.Year)
+      Month: new FormControl(this.income.Info[0].Month),
+      Year: new FormControl(this.income.Info[0].Year)
     });
     console.log(this.editForm);
   }
@@ -47,10 +47,11 @@ export class IncomeEditComponent implements OnInit {
       OldMonth: this.income.Info[0].Month,
       OldYear: this.income.Info[0].Year,
       NewMonth: this.editForm.value.Month,
-      NewYear: this.editForm.value.Year,
-    };
+      NewYear: this.editForm.value.Year
+    }; 
     this.incomeService.updateIncome(updatedIncome).subscribe(() => {
       this.router.navigate(['/Income']);
+      console.log(updatedIncome);
     });
   }
 

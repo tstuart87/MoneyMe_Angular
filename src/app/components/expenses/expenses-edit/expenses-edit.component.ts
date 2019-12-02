@@ -27,13 +27,14 @@ export class ExpensesEditComponent implements OnInit {
   }
 
   createForm() {
+    console.log(this.expenses);
     this.editForm = this.formBuilder.group({
       ExpenseId: new FormControl(this.expenses.ExpenseId),
       Company: new FormControl(this.expenses.Company),
       Description: new FormControl(this.expenses.Description),
       Amount: new FormControl(this.expenses.Amount),
-      Month: new FormControl(this.expenses.Month),
-      Year: new FormControl(this.expenses.Year)
+      Month: new FormControl(this.expenses.Info[0].Month),
+      Year: new FormControl(this.expenses.Info[0].Year)
     });
   }
 
@@ -49,6 +50,7 @@ export class ExpensesEditComponent implements OnInit {
       NewMonth: this.editForm.value.Month,
       OwnerId: this.editForm.value.OwnerId
     };
+    console.log(updatedExpenses);
     this.expensesService.updateExpenses(updatedExpenses).subscribe(() => {
       this.router.navigate(['/expenses']);
     });
