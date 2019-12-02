@@ -81,7 +81,7 @@ const routes = [
     { path: 'edit/:id', component: DebtEditComponent },
     { path: 'delete/:id', component: DebtDeleteComponent }
   ]},
-  { path: 'Income', children: [
+  { path: 'income', children: [
     { path: '', component: IncomeIndexComponent },
     { path: 'create', component: IncomeCreateComponent },
     { path: 'detail/:id', component: IncomeDetailComponent },

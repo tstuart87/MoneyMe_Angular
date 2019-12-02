@@ -31,8 +31,8 @@ export class DebtEditComponent implements OnInit {
       Company: new FormControl(this.debt.Company),
       Description: new FormControl(this.debt.Description),
       Amount: new FormControl(this.debt.Amount),
-      Month: new FormControl(this.debt.Month),
-      Year: new FormControl(this.debt.Year),
+      Month: new FormControl(this.debt.Info[0].Month),
+      Year: new FormControl(this.debt.Info[0].Year),
       DebtId: new FormControl(this.debt.DebtId)
     });
   }
