@@ -6,36 +6,45 @@
         <div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Company" formControlName="Company" type="text" required
+                    <p>Company:</p>
+                    <input matInput formControlName="Company" type="text" required
                         [value]="debt.Company" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Description" formControlName="Description" type="text" required
+                    <p>Description:</p>
+                    <input matInput formControlName="Description" type="text" required
                         [value]="debt.Description" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Amount" formControlName="Amount" type="number" required
+                    <p>Amount:</p>
+                    <input matInput formControlName="Amount" type="number" required
                         [value]="debt.Amount" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Month" formControlName="Month" type="text" required
+                    <p>Month:</p>
+                    <input matInput formControlName="Month" type="text" required
                         [value]="debt.Info[0].Month" />
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
-                    <input matInput placeholder="Year" formControlName="Year" type="number" required
+                    <p>Year:</p>
+                    <input matInput formControlName="Year" type="number" required
                         [value]="debt.Info[0].Year" />
                 </mat-form-field>
             </div>
         </div>
-        <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+
+        <button class="mat-raised-button" mat-raised-button class="nav-btn" type="submit">Save</button>
+
     </form>
 </div>
+
+<br />
 <button mat-raised-button color="primary" routerLink="/debt">Back to List</button>

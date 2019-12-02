@@ -49,13 +49,13 @@
                 <a class="nav-link" routerLink="/debt">Debt</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link red" routerLink="/register">Register</a>
+                <a *ngIf="!isLoggedIn" class="nav-link red" routerLink="/register">Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link red" routerLink="/login">Login</a>
+                <a *ngIf="!isLoggedIn" class="nav-link red" routerLink="/login">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link red" (click)="logout()" routerLink="/login">Logout</a>
+                <a *ngIf="!isLoggedIn" class="nav-link red" (click)="logout()" routerLink="/login">Logout</a>
             </li>
         </ul>
     </div>

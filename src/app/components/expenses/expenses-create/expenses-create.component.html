@@ -5,31 +5,37 @@
     <div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Company" formControlName="Company" type="Company" />
+                <p>Company:</p>
+                <input matInput formControlName="Company" type="Company" />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Description" formControlName="Description" type="Description" />
+                <p>Description:</p>
+                <input matInput formControlName="Description" type="Description" />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Amount" formControlName="Amount" type="Amount" />
+                <p>Amount:</p>
+                <input matInput formControlName="Amount" type="Amount" />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Month" formControlName="Month" type="number" />
+                <p>Month:</p>
+                <input matInput formControlName="Month" type="number" />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Year" formControlName="Year" type="number" />
+                <p>Year:</p>
+                <input matInput formControlName="Year" type="number" />
             </mat-form-field>
         </div>
     </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Expense</button>
+    <button class="mat-raised-button" mat-raised-button type="submit">Create Expense</button>
 </form>
 
+<br />
 <a mat-button routerLink="/expenses">Back to Expenses List</a>
