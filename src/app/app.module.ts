@@ -49,6 +49,8 @@ import { IncomeService } from './services/income.service';
 
 import { MonthlyBudgetService } from './services/monthly-budget.service';
 import { MonthlybudgetIndexComponent } from './components/monthlybudget/monthlybudget-index/monthlybudget-index.component';
+import { UserIndexComponent } from './components/UserRole/user-index/user-index.component';
+import { UserDeleteComponent } from './components/UserRole/user-delete/user-delete.component';
 // import { MonthlybudgetEditComponent } from './components/monthlybudget/monthlybudget-excess/monthlybudget-excess.component';
 
 const routes = [
@@ -124,6 +126,8 @@ const routes = [
     IncomeEditComponent,
     IncomeIndexComponent,
     MonthlybudgetIndexComponent,
+    UserIndexComponent,
+    UserDeleteComponent,
     // MonthlybudgetEditComponent
 
   ],
