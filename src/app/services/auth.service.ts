@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { UserInfo } from '../models/UserInfo';
 
-const Api_Url = 'https://moneyme20191202065615.azurewebsites.net'
+const Api_Url = 'https://moneyme20191202065615.azurewebsites.net';
+
 
 @Injectable({
   providedIn: 'root'
@@ -56,8 +57,7 @@ export class AuthService {
     this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
     localStorage.clear();
     this.isLoggedIn.next(false);
-    this.router.navigate(['/login']).then(() => {
-      window.location.reload()
+    this.router.navigate(['/login']).then(() => { window.location.reload()
     });
   }
 

@@ -29,6 +29,7 @@ export class ExpensesEditComponent implements OnInit {
   createForm() {
     console.log(this.expenses);
     this.editForm = this.formBuilder.group({
+      OwnerId: new FormControl(this.expenses.OwnerId),
       ExpenseId: new FormControl(this.expenses.ExpenseId),
       Company: new FormControl(this.expenses.Company),
       Description: new FormControl(this.expenses.Description),
@@ -50,7 +51,6 @@ export class ExpensesEditComponent implements OnInit {
       NewMonth: this.editForm.value.Month,
       OwnerId: this.editForm.value.OwnerId
     };
-    console.log(updatedExpenses);
     this.expensesService.updateExpenses(updatedExpenses).subscribe(() => {
       this.router.navigate(['/expenses']);
     });

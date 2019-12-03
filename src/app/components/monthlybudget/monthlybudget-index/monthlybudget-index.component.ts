@@ -7,6 +7,9 @@ import { DebtService } from 'src/app/services/debt.service';
 import { FutureFunService } from 'src/app/services/future-fun.service';
 import { MonthlyBasicInfo } from 'src/app/models/Expenses';
 import { ExpensesService } from 'src/app/services/expenses.service';
+import { Excess } from 'src/app/models/Excess';
+import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-monthlybudget-index',
@@ -15,12 +18,16 @@ import { ExpensesService } from 'src/app/services/expenses.service';
 })
 export class MonthlybudgetIndexComponent implements OnInit {
 
+  isGoodStamp:boolean = true;
+
   monthly: MonthlyBudget;
   editMonthlyForm: FormGroup;
   thisMonth: number = new Date().getMonth() + 1;
   thisYear: number = new Date().getFullYear();
   resultMonth: number = new Date().getMonth() +1;
   resultYear: number = new Date().getFullYear();
+
+  
 
   constructor(private formBuilder: FormBuilder, private debtService: DebtService, private expensesService: ExpensesService, private futureFunService: FutureFunService, private monthlyBudgetService: MonthlyBudgetService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -40,8 +47,20 @@ export class MonthlybudgetIndexComponent implements OnInit {
       this.debt = all.Debt;
       this.fun = all.Fun;
       this.expense = all.Expense;
+      this.goodOrBadStamp(all.Excess);
       console.log(all);
     });
     console.log(this.thisMonth);
   }
+
+  goodOrBadStamp(excess) {
+    if (this.all.Excess >= 0) {
+      this.isGoodStamp = true;
+    }
+    else {
+      this.isGoodStamp = false;
+    }
+
+  }
+
 }
