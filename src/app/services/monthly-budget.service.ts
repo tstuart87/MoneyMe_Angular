@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MonthlyBudget } from '../models/MonthlyBudget';
 import { Excess } from '../models/Excess';
+import { Subject } from 'rxjs';
+import { all } from 'q';
+import { MonthlybudgetIndexComponent } from '../components/monthlybudget/monthlybudget-index/monthlybudget-index.component';
 
 const Api_Url = 'https://moneyme20191202065615.azurewebsites.net';
 
@@ -13,11 +16,11 @@ export class MonthlyBudgetService {
   constructor(private http: HttpClient) { }
 
   getMonths(id: number, year: number) {
-    return this.http.get(`${Api_Url}api/Monthly/${id}?year=${year}`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/api/Monthly/${id}?year=${year}`, { headers: this.getHeaders() });
   }
 
   updateExcess(id: number, year: number) {
-    return this.http.put(`${Api_Url}api/MonthExcess?id=${id}&year=${year}`, {headers: this.getHeaders() });
+    return this.http.put(`${Api_Url}/api/MonthExcess?id=${id}&year=${year}`, {headers: this.getHeaders() });
   }
 
   private getHeaders() {

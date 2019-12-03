@@ -12,23 +12,23 @@ export class IncomeService {
   constructor(private http: HttpClient) { }
 
   getIncomes() {
-    return this.http.get(`${Api_Url}api/Income`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/api/Income`, { headers: this.getHeaders() });
   }
 
   getIncomeById(id) {
-    return this.http.get(`${Api_Url}api/Income/${id}`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/api/Income/${id}`, { headers: this.getHeaders() });
   }
 
   createIncome(income: Income) {
-return this.http.post(`${Api_Url}api/Income`, income, {headers: this.getHeaders() });
+    return this.http.post(`${Api_Url}/api/Income`, income, { headers: this.getHeaders() });
   }
 
   updateIncome(income: Income) {
-    return this.http.put(`${Api_Url}api/Income`, income, {headers: this.getHeaders() });
+    return this.http.put(`${Api_Url}/api/Income`, income, {headers: this.getHeaders() });
   }
 
   deleteIncome(id: number) {
-    return this.http.delete(`${Api_Url}api/Income/${id}`, {headers: this.getHeaders() });
+    return this.http.delete(`${Api_Url}/api/Income/${id}`, {headers: this.getHeaders() });
   }
 
   private getHeaders() {
