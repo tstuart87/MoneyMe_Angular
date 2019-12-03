@@ -21,8 +21,8 @@
             <div>
                 <mat-form-field>
                     <p>Amount:</p>
-                    <input matInput formControlName="Amount" min="0" type="number" required
-                        [value]="debt.Amount" />
+                    <input matInput formControlName="number" min="0" type="number" required
+                        [value]="debt.number" />
                 </mat-form-field>
             </div>
             <div>
@@ -47,4 +47,4 @@
 </div>
 
 <br />
-<button mat-raised-button color="primary" routerLink="/debt">Back to List</button>
+<button mat-button routerLink="/debt">Back to List</button>

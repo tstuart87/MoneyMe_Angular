@@ -108,3 +108,12 @@ p, label {
     color: blue;
     cursor: pointer;
 }
+
+.stamp {
+    position: fixed;
+    width: 190px;
+    top: 63px;
+    left: 80%;
+}
+
+

@@ -28,7 +28,7 @@ return this.http.post(`${Api_Url}/api/DebtSnowball`, Debt, {headers: this.getHea
   }
 
   deleteDebt(id: number) {
-    return this.http.delete(`${Api_Url}api/DebtSnowball/${id}`, {headers: this.getHeaders() });
+    return this.http.delete(`${Api_Url}/api/DebtSnowball/${id}`, {headers: this.getHeaders() });
   }
 
   private getHeaders() {
