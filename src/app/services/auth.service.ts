@@ -50,7 +50,6 @@ export class AuthService {
     });
   };
 
-
   logout() {
     this.http.post(`${APIURL}/api/Account/Logout`, { headers: this.setHeaders() });
     localStorage.clear();
