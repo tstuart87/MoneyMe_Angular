@@ -9,11 +9,6 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <!-- <ng-container matColumnDef="OwnerId">
-            <mat-header-cell *matHeaderCellDef>OwnerId</mat-header-cell>
-            <mat-cell *matCellDef="let note;">{{debt.OwnerId}}</mat-cell>
-        </ng-container> -->
-
         <ng-container matColumnDef="Company">
             <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
             <mat-cell *matCellDef="let debt;">{{debt.Company}}</mat-cell>
@@ -29,7 +24,6 @@
             <mat-cell *matCellDef="let debt;">{{debt.Amount}}</mat-cell>
         </ng-container>
 
-
         <ng-container matColumnDef="Month">
             <mat-header-cell *matHeaderCellDef>Month</mat-header-cell>
             <mat-cell *matCellDef="let debt;">{{debt.Info[0].Month}}</mat-cell>
@@ -39,17 +33,6 @@
             <mat-header-cell *matHeaderCellDef>Year</mat-header-cell>
             <mat-cell *matCellDef="let debt;">{{debt.Info[0].Year}}</mat-cell>
         </ng-container>
-
-        <!-- <ng-container matColumnDef="DebtId">
-            <mat-header-cell *matHeaderCellDef>DebtId</mat-header-cell>
-            <mat-cell *matCellDef="let note;">
-                    <i class="material-icons" routerLink="/debt/detail/{{debt.DebtId}}">DebtId</i></mat-cell>
-        </ng-container> -->
-
-        <!-- <ng-container matColumnDef="TotalDebt">
-            <mat-header-cell *matHeaderCellDef>TotalDebt</mat-header-cell>
-            <mat-cell *matCellDef="let note;">{{debt.TotalDebt}}</mat-cell>
-        </ng-container> -->
 
         <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
