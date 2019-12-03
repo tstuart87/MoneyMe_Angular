@@ -50,7 +50,7 @@
             <mat-cell *matCellDef="let expense;">{{expense.Description}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="Amount">
-            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
             <mat-cell *matCellDef="let expense;">${{expense.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
@@ -69,7 +69,7 @@
             <mat-cell *matCellDef="let debt;">{{debt.Description}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="Amount">
-            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
             <mat-cell *matCellDef="let debt;">${{debt.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
@@ -88,7 +88,7 @@
             <mat-cell *matCellDef="let fun;">{{fun.Description}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="Amount">
-            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
             <mat-cell *matCellDef="let fun;">${{fun.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
