@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, CanActivate } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { 
@@ -53,6 +53,7 @@ import { UserIndexComponent } from './components/UserRole/user-index/user-index.
 import { UserDeleteComponent } from './components/UserRole/user-delete/user-delete.component';
 
 import { UserService } from './services/user.service';
+import { AuthGuard } from './auth.guard';
 
 
 // import { MonthlybudgetEditComponent } from './components/monthlybudget/monthlybudget-excess/monthlybudget-excess.component';
@@ -101,8 +102,8 @@ const routes = [
   ]},
 
   { path: 'User', children: [
-    { path: '', component: UserIndexComponent },
-    { path: 'delete/:id', component: UserDeleteComponent }
+    { path: '', component: UserIndexComponent, CanActivate: [AuthGuard] },
+    { path: 'delete/:id', component: UserDeleteComponent, CanActivate: [AuthGuard] }
   ]},
 
   { path: '**', component: RegistrationComponent }
@@ -163,7 +164,8 @@ const routes = [
     DebtService,
     IncomeService,
     MonthlyBudgetService,
-    UserService
+    UserService,
+    AuthGuard
   ],
   exports: [
   ],

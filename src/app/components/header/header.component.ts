@@ -11,18 +11,17 @@ import { throwMatDialogContentAlreadyAttachedError } from '@angular/material';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn: boolean;
-
+  isAdmin: boolean;
   constructor(public authService: AuthService) { }
 
   ngOnInit() {
     this.checkIfLoggedIn();
+    this.isAdmin = (localStorage.getItem('Role') === 'true') ? true : false;
   }
   checkIfLoggedIn() {
     if (localStorage.getItem('id_token')) {
       this.isLoggedIn = true;
     }
     else this.isLoggedIn = false;
-
   }
-
 }
