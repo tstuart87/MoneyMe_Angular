@@ -1,5 +1,13 @@
 .mat-header-cell {
     font-weight: bolder;
     color: green;
-    font-size: 25pt;
+    font-size: 15pt;
+}
+
+.ng-container {
+    font-size: 50pt;
+}
+
+.excess {
+    font-size: 20pt;
 }

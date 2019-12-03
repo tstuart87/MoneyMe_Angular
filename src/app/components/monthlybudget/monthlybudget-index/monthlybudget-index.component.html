@@ -1,17 +1,20 @@
 
 <div *ngIf="all">
-    <span>{{excess}}</span>
+    <span class="excessFont">{{excess}}</span>
 </div>
 
 <h1>Budget</h1>
 
-<hr />
+<br />
 
-<div class="detail">
-    <h1>Monthly Excess</h1>
-    <ng-container *ngIf='all'>{{all.Excess}}</ng-container>
+<div class="detail excess">
+    <h2>Monthly Excess</h2>
+    <ng-container *ngIf='all'>${{all.Excess}}</ng-container>
 </div>
 <br />
+
+<img *ngIf="isGoodStamp" class="stamp" src="../../../../assets/img/budgetGood.png" />
+<img *ngIf="!isGoodStamp" class="stamp" src="../../../../assets/img/budgetBad.png" />
 
 <div class="detail">
     <mat-table #table [dataSource]="income">
@@ -23,7 +26,7 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
-            <mat-cell *matCellDef="let Income;">{{Income.Amount}}</mat-cell>
+            <mat-cell *matCellDef="let Income;">${{Income.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
@@ -48,7 +51,7 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
-            <mat-cell *matCellDef="let expense;">{{expense.Amount}}</mat-cell>
+            <mat-cell *matCellDef="let expense;">${{expense.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
@@ -67,7 +70,7 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
-            <mat-cell *matCellDef="let debt;">{{debt.Amount}}</mat-cell>
+            <mat-cell *matCellDef="let debt;">${{debt.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
@@ -86,7 +89,7 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
-            <mat-cell *matCellDef="let fun;">{{fun.Amount}}</mat-cell>
+            <mat-cell *matCellDef="let fun;">${{fun.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
