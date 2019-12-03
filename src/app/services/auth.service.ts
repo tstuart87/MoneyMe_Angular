@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { UserInfo } from '../models/UserInfo';
 
 const Api_Url = 'https://localhost:44325'
 
@@ -14,9 +15,9 @@ export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
-  register(regUserData: RegisterUser) { 
+  register(regUserData: RegisterUser) {
     return this.http.post(`${Api_Url}/api/Account/Register`, regUserData);
   }
 
@@ -27,8 +28,7 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/Monthly']).then(() => { window.location.reload() 
-      });
+      this.userAdminRole()
     });
   }
 
@@ -39,13 +39,26 @@ export class AuthService {
 
     return this.http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeaders() });
   }
+  isAdmin: Boolean = true;
+
+  userAdminRole(): any {
+    this.currentUser().subscribe((userInfo: UserInfo) => {
+      localStorage.setItem('Role', userInfo.Role.toString());
+      this.router.navigate(['/Monthly']).then(() => {
+        window.location.reload()
+      });
+
+    });
+  };
+
 
   logout() {
     this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
     localStorage.clear();
     this.isLoggedIn.next(false);
-    this.router.navigate(['/login']);
-    location.reload();
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload()
+    });
   }
 
   private setHeaders(): HttpHeaders {

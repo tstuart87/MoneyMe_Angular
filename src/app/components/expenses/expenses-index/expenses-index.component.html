@@ -12,13 +12,6 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <!-- <ng-container matColumnDef="details">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let expenses;">
-                <i class="material-icons" routerLink="/expenses/detail/{{expenses.ExpenseId}}">library_books</i>
-            </mat-cell>
-        </ng-container> -->
-
         <ng-container matColumnDef="Company">
             <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
             <mat-cell *matCellDef="let expenses;">{{expenses.Company}}</mat-cell>

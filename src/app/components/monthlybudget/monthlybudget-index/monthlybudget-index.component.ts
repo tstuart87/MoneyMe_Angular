@@ -35,10 +35,6 @@ export class MonthlybudgetIndexComponent implements OnInit {
   all: MonthlyBasicInfo;
 
   ngOnInit() {
-    // this.monthlyBudgetService.updateExcess(this.thisMonth, this.thisYear).subscribe((excess: number) => {
-    //   this.excess = excess;
-    // });
-
     this.monthlyBudgetService.getMonths(this.thisMonth, this.thisYear).subscribe((all: MonthlyBasicInfo) => {
       this.all = all;
       this.income = all.Income;
@@ -48,6 +44,5 @@ export class MonthlybudgetIndexComponent implements OnInit {
       console.log(all);
     });
     console.log(this.thisMonth);
-
   }
 }
