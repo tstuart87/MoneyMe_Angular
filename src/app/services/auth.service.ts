@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = 'https://localhost:44325'
+const Api_Url = 'https://moneyme20191202065615.azurewebsites.net';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +44,8 @@ export class AuthService {
     this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
     localStorage.clear();
     this.isLoggedIn.next(false);
-    this.router.navigate(['/login']);
-    location.reload();
+    this.router.navigate(['/login']).then(() => { window.location.reload() 
+    });
   }
 
   private setHeaders(): HttpHeaders {
