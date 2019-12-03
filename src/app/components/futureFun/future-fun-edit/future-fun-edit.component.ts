@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FutureFunService } from 'src/app/services/future-fun.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FutureFun } from 'src/app/models/futureFun';
+import { FutureFun } from '../../../models/FutureFun';
 
 @Component({
   selector: 'app-future-fun-edit',
