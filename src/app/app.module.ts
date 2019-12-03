@@ -15,7 +15,7 @@ import {
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //check with Becky about this.
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 

@@ -23,7 +23,7 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
-            <mat-cell *matCellDef="let Income;">{{Income.Amount}} &nbsp; | &nbsp; <i class="material-icons" routerLink="/Income/edit/{{Income.IncomeId}}">edit</i></mat-cell>
+            <mat-cell *matCellDef="let Income;">{{Income.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
@@ -48,7 +48,7 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
-            <mat-cell *matCellDef="let expense;">{{expense.Amount}} &nbsp; | &nbsp; <i class="material-icons" routerLink="/expenses/edit/{{expense.ExpenseId}}">edit</i></mat-cell>
+            <mat-cell *matCellDef="let expense;">{{expense.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
@@ -67,7 +67,7 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
-            <mat-cell *matCellDef="let debt;">{{debt.Amount}} &nbsp; | &nbsp; <i class="material-icons" routerLink="/debt/edit/{{debt.DebtId}}">edit</i> </mat-cell>
+            <mat-cell *matCellDef="let debt;">{{debt.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
@@ -86,10 +86,12 @@
         </ng-container>
         <ng-container matColumnDef="Amount">
             <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
-            <mat-cell *matCellDef="let fun;">{{fun.Amount}} &nbsp; | &nbsp; <i class="material-icons" routerLink="/futureFun/edit/{{fun.FunId}}">edit</i></mat-cell>
+            <mat-cell *matCellDef="let fun;">{{fun.Amount}}</mat-cell>
         </ng-container>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
     </mat-table>
 </div>
+
 <br />
+

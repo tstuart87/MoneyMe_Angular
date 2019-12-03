@@ -1,6 +1,3 @@
-//import { IncomingMessage } from 'http';
-//import { Expense } from './Expenses';
-
 enum Months {
     January = 1,
     February,
