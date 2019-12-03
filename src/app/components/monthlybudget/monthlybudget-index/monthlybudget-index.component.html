@@ -1,0 +1,100 @@
+
+<div *ngIf="all">
+    <span class="excessFont">{{excess}}</span>
+</div>
+
+<h1>Budget</h1>
+
+<br />
+
+<div class="detail excess">
+    <h2>Monthly Excess</h2>
+    <ng-container *ngIf='all'>${{all.Excess}}</ng-container>
+</div>
+<br />
+
+<img *ngIf="isGoodStamp" class="stamp" src="../../../../assets/img/budgetGood.png" />
+<img *ngIf="!isGoodStamp" class="stamp" src="../../../../assets/img/budgetBad.png" />
+
+<div class="detail">
+    <mat-table #table [dataSource]="income">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Income(s)</mat-header-cell>
+            <mat-cell *matCellDef="let Income;">{{Income.Description}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let Income;">${{Income.Amount}}</mat-cell>
+        </ng-container>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let Income;">
+            </mat-cell>
+        </ng-container>
+
+    </mat-table>
+</div>
+
+<br />
+
+<div class="detail">
+    <mat-table #table [dataSource]="expense">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Expense(s)</mat-header-cell>
+            <mat-cell *matCellDef="let expense;">{{expense.Description}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
+            <mat-cell *matCellDef="let expense;">${{expense.Amount}}</mat-cell>
+        </ng-container>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    </mat-table>
+</div>
+
+<br />
+
+<div class="detail">
+    <mat-table #table [dataSource]="debt">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Extra Debt Payment(s)</mat-header-cell>
+            <mat-cell *matCellDef="let debt;">{{debt.Description}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
+            <mat-cell *matCellDef="let debt;">${{debt.Amount}}</mat-cell>
+        </ng-container>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    </mat-table>
+</div>
+
+<br />
+
+<div class="detail">
+    <mat-table #table [dataSource]="fun">
+
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Future Fun Saving(s)</mat-header-cell>
+            <mat-cell *matCellDef="let fun;">{{fun.Description}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>{{Amount}}</mat-header-cell>
+            <mat-cell *matCellDef="let fun;">${{fun.Amount}}</mat-cell>
+        </ng-container>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    </mat-table>
+</div>
+
+<br />
+

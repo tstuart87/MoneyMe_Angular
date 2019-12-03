@@ -16,13 +16,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.authService.isLoggedIn)
   }
 
   createForm() {
     this.loginForm = this.form.group({
       email: new FormControl,
       password: new FormControl
-    })
+    });
   }
 
   onSubmit() {

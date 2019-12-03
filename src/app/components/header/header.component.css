@@ -4,6 +4,36 @@
 
 .nav-btn {
     margin-right: 0.5em;
-    background-color: #132584;
+    background-color: black;
     color: white;
+}
+
+img.logo {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.navbar {
+    background-color: #182f22 !important;
+    margin: -17px -8px 2px -8px;
+}
+
+.nav-link {
+    background-color: #182f22 !important;
+    color: white !important;
+    margin-right: 18px;
+    margin-left: 2px;
+}
+
+.nav-link:hover {
+    background-color: #15291e !important;
+    border-radius: 6px;
+}
+
+.red {
+    color: #b73c3c !important;
+}
+
+nav {
+    background-color: #182f22;
 }

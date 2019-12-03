@@ -1,0 +1,29 @@
+<h1>Delete Debt</h1>
+<hr />
+
+<div class="delete" *ngIf="debt">
+    <div>
+        <label>Company: </label>
+        <span>{{debt.Company}}</span>
+    </div>
+    <div>
+        <label>Description: </label>
+        <span>{{debt.Description}}</span>
+    </div>
+    <div>
+        <label>Amount: </label>
+        <span>{{debt.Amount}}</span>
+    </div>
+    <div>
+        <label>Month: </label>
+        <span>{{debt.Info[0].Month}}</span>
+    </div>
+    <div>
+        <label>Year: </label>
+        <span>{{debt.Info[0].Year}}</span>
+    </div>
+    <button class="mat-raised-button" mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+
+<br />
+<button mat-button color="primary" routerLink="/debt">Back to List</button>

@@ -1,0 +1,26 @@
+<h1>Users</h1>
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="OwnerId">
+            <mat-header-cell *matHeaderCellDef>OwnerId</mat-header-cell>
+            <mat-cell *matCellDef="let User;">{{User.OwnerId}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Email">
+            <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+            <mat-cell *matCellDef="let User;">{{User.Email}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="buttons">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let User;">
+                    <i class="material-icons" routerLink="/User/delete/{{User.OwnerId}}">delete</i>
+                </mat-cell>
+            </ng-container>
+    </mat-table>
+</div>

@@ -1,0 +1,31 @@
+<h1>Delete Expense</h1>
+<h4>Are you sure you want to delete this Expense?</h4>
+<hr />
+
+<div class="delete" *ngIf="expenses">
+    <div>
+        <label>Company: </label>
+        <span>{{expenses.Company}}</span>
+    </div>
+    <div>
+        <label>Description:</label>
+        <span>{{expenses.Description}}</span>
+    </div>
+    <div>
+        <label>Amount:</label>
+        <span>{{expenses.Amount}}</span>
+    </div>
+    <div>
+        <label>Month:</label>
+        <span>{{expenses.Info[0].Month}}</span>
+    </div>
+    <div>
+        <label>Year:</label>
+        <span>{{expenses.Info[0].Year}}</span>
+    </div>
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+
+<br />
+<button mat-button routerLink="/expenses">Back to Expenses List</button>
+

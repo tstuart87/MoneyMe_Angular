@@ -1,25 +1,43 @@
-<h1>Your Income</h1>
-<a mat-raised-button color="Primary">Create New</a>
+<h1>Income</h1>
+<a mat-raised-button class="mat-raised-button" routerLink="/Income/create">Create New</a>
 <hr />
+
+<img class="happySadIcon" src="../../../../assets/img/incomeGood.png" />
 
 <div>
     <mat-table #table [dataSource]="dataSource">
+        
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-        <mat-header-row *matRowDef="let row; columns: columnNames;"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <ng-container matColumndef="details">
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+            <mat-cell *matCellDef="let Income;">{{Income.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let Income;">{{Income.Amount}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Month">
+                <mat-header-cell *matHeaderCellDef>Month</mat-header-cell>
+                <mat-cell *matCellDef="let Income;">{{Income.Info[0].Month}}</mat-cell>
+            </ng-container>
+
+        <ng-container matColumnDef="Year">
+                <mat-header-cell *matHeaderCellDef>Year</mat-header-cell>
+                <mat-cell *matCellDef="let Income;">{{Income.Info[0].Year}}</mat-cell>
+            </ng-container>
+
+
+        <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="Let Income">
-                <i class="material-icons">library_books</i>
+            <mat-cell *matCellDef="let Income;">
+                <i class="material-icons" routerLink="/Income/edit/{{Income.IncomeId}}">edit</i>
+                <i class="material-icons" routerLink="/Income/delete/{{Income.IncomeId}}">delete</i>
             </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="Title">
-            <mat-header-cell *matHeaderCellDef>Owner Id</mat-header-cell>
-            <mat-cell *matCellDef="let income;">{{Income.OwnerId}}</mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef=""
-    
     </mat-table>
 </div>

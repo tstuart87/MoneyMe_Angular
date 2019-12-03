@@ -1,0 +1,46 @@
+<h1>Debt</h1>
+<a mat-raised-button class="mat-raised-button" routerLink="/debt/create">Create New</a>
+<hr />
+
+<img class="happySadIcon" src="../../../../assets/img/debtGood.png" />
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="Company">
+            <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+            <mat-cell *matCellDef="let debt;">{{debt.Company}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+            <mat-cell *matCellDef="let debt;">{{debt.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Amount">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let debt;">{{debt.Amount}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Month">
+            <mat-header-cell *matHeaderCellDef>Month</mat-header-cell>
+            <mat-cell *matCellDef="let debt;">{{debt.Info[0].Month}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Year">
+            <mat-header-cell *matHeaderCellDef>Year</mat-header-cell>
+            <mat-cell *matCellDef="let debt;">{{debt.Info[0].Year}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let debt;">
+                <i class="material-icons" routerLink="/debt/edit/{{debt.DebtId}}">edit</i>
+                <i class="material-icons" routerLink="/debt/delete/{{debt.DebtId}}">delete</i>
+            </mat-cell>
+        </ng-container>
+
+    </mat-table>
+</div>
