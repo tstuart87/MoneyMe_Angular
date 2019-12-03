@@ -15,7 +15,7 @@ import {
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //check with Becky about this.
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 
@@ -55,7 +55,6 @@ import { UserDeleteComponent } from './components/UserRole/user-delete/user-dele
 import { UserService } from './services/user.service';
 
 
-// import { MonthlybudgetEditComponent } from './components/monthlybudget/monthlybudget-excess/monthlybudget-excess.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -94,10 +93,6 @@ const routes = [
   ]},
   { path: 'Monthly', children: [
     { path: '', component: MonthlybudgetIndexComponent },
-    // { path: 'create', component:  },
-    // { path: 'detail/:id', component:  },
-    // { path: 'edit/:id', component:  },
-    // { path: 'delete/:id', component:  }
   ]},
 
   { path: 'User', children: [
@@ -137,7 +132,6 @@ const routes = [
     MonthlybudgetIndexComponent,
     UserIndexComponent,
     UserDeleteComponent,
-    // MonthlybudgetEditComponent
 
   ],
   imports: [

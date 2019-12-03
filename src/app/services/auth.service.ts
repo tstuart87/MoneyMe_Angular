@@ -5,7 +5,7 @@ import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = 'https://localhost:44325'
+const Api_Url = 'https://moneyme20191202065615.azurewebsites.net'
 
 @Injectable({
   providedIn: 'root'

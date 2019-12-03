@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MonthlyBudget } from '../models/MonthlyBudget';
 import { Excess } from '../models/Excess';
 
-const Api_Url = 'https://localhost:44325/';
+const Api_Url = 'https://moneyme20191202065615.azurewebsites.net';
 
 @Injectable({
   providedIn: 'root'

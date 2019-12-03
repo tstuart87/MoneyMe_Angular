@@ -1,36 +1,12 @@
-<!-- <mat-toolbar color="primary"> -->
-
-<!-- <mat-toolbar>
-    <span><a routerLink="/login"><img class="logo" src="../../../assets/img/redBadgeProject02tp.png" /></a></span>
-
-    <span class="flex-filler">
-
-        <button mat-button class="nav-link" routerLink="/Monthly">Budget</button>
-        <button mat-button class="nav-link" routerLink="/Income">Income</button>
-        <button mat-button class="nav-link" routerLink="/expenses">Expenses</button>
-        <button mat-button class="nav-link" routerLink="/debt">Debt</button>
-        <button mat-button class="nav-link" routerLink="/futureFun">Future Fun</button>
-
-    </span>
-
-    <button mat-button class="nav-btn" routerLink="/register">Register</button>
-    <button mat-button class="nav-btn" routerLink="/login">Login</button>
-</mat-toolbar> -->
-
-
-<!-- ********************** RESPONSIVE HEADER BELOW *********************** -->
-
-
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
+
     <a routerLink="/login"><img class="logo" src="../../../assets/img/redBadgeProject02tp.png" /></a>
 
-    <!-- Toggler/collapsibe Button -->
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -57,11 +33,6 @@
             <li class="nav-item">
                 <a *ngIf="isLoggedIn" class="nav-link red" (click)="authService.logout()" routerLink="/login">Logout</a>
             </li>
-
-           <!-- <ng-container *ngIf='isLoggedIn'>
-               <h1>Hello:</h1>
-               <span>{{User.Email}}</span>
-            </ng-container> -->
         </ul>
     </div>
 </nav>

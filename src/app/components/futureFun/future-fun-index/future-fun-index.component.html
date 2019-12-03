@@ -10,22 +10,6 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <!-- <ng-container matColumnDef="details">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let futureFun;">
-                <i class="material-icons" routerLink="/futureFun/detail/{{futureFun.FunId}}">library_books</i>
-            </mat-cell>
-        </ng-container> -->
-
-        <!-- <ng-container matColumnDef="FunId">
-            <mat-header-cell *matHeaderCellDef>FunId</mat-header-cell>
-            <mat-cell *matCellDef="let futureFun;">{{futureFun.FunId}}</mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="OwnerId">
-            <mat-header-cell *matHeaderCellDef>OwnerId</mat-header-cell>
-            <mat-cell *matCellDef="let futureFun;">{{futureFun.OwnerId}}</mat-cell>
-        </ng-container> -->
 
         <ng-container matColumnDef="Description">
             <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>

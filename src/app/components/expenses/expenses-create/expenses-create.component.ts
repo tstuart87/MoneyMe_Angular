@@ -32,7 +32,6 @@ export class ExpensesCreateComponent implements OnInit {
   onSubmit() {
     this.expensesService.createExpenses(this.expensesForm.value).subscribe(() => {
       this.router.navigate(['/expenses']);
-      // console.log(this.expensesForm.value);
     });
   }
 }
