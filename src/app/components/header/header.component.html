@@ -25,6 +25,9 @@
                 <a *ngIf="isLoggedIn" class="nav-link" routerLink="/debt">Debt</a>
             </li>
             <li class="nav-item">
+                <a *ngIf="isAdmin" role="Admin" class="nav-link" routerLink="/User">Users</a>
+            </li>
+            <li class="nav-item">
                 <a *ngIf="!isLoggedIn" class="nav-link red" routerLink="/register">Register</a>
             </li>
             <li class="nav-item">

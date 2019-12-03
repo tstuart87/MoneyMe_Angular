@@ -10,7 +10,6 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-
         <ng-container matColumnDef="Description">
             <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
             <mat-cell *matCellDef="let futureFun;">{{futureFun.Description}}</mat-cell>

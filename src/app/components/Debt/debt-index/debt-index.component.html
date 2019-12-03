@@ -9,7 +9,6 @@
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-
         <ng-container matColumnDef="Company">
             <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
             <mat-cell *matCellDef="let debt;">{{debt.Company}}</mat-cell>
@@ -25,7 +24,6 @@
             <mat-cell *matCellDef="let debt;">{{debt.Amount}}</mat-cell>
         </ng-container>
 
-
         <ng-container matColumnDef="Month">
             <mat-header-cell *matHeaderCellDef>Month</mat-header-cell>
             <mat-cell *matCellDef="let debt;">{{debt.Info[0].Month}}</mat-cell>
@@ -35,7 +33,6 @@
             <mat-header-cell *matHeaderCellDef>Year</mat-header-cell>
             <mat-cell *matCellDef="let debt;">{{debt.Info[0].Year}}</mat-cell>
         </ng-container>
-
 
         <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FutureFun } from 'src/app/models/FutureFun';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IncomeService } from 'src/app/services/income.service';
 import { Income } from 'src/app/models/Income';
@@ -16,7 +15,7 @@ export class IncomeDeleteComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private incomeService: IncomeService, private router: Router ) { 
     this.activatedRoute.paramMap.subscribe(params => {
       this.incomeService.getIncomeById(params.get('id')).subscribe((income: Income) => {
-        this.income = this.income;
+        this.income = income;
       });
     });
   }
