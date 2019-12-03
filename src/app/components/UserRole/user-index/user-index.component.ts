@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class UserIndexComponent implements OnInit {
 
-  columnNames = ['OwnerId', 'Email'];
+  columnNames = ['OwnerId', 'Email', 'buttons'];
 
   dataSource: MatTableDataSource<User>;
 
@@ -18,7 +18,7 @@ export class UserIndexComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUsers().subscribe((users: User[])=>{
-      this.dataSource = new MatTableDataSource
+      this.dataSource = new MatTableDataSource<User>(users);
     });
   }
 

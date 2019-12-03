@@ -10,6 +10,7 @@ import { ExpensesService } from 'src/app/services/expenses.service';
 import { Excess } from 'src/app/models/Excess';
 import { Subject } from 'rxjs';
 
+
 @Component({
   selector: 'app-monthlybudget-index',
   templateUrl: './monthlybudget-index.component.html',
@@ -40,10 +41,6 @@ export class MonthlybudgetIndexComponent implements OnInit {
   all: MonthlyBasicInfo;
 
   ngOnInit() {
-    // this.monthlyBudgetService.updateExcess(this.thisMonth, this.thisYear).subscribe((excess: number) => {
-    //   this.excess = excess;
-    // });
-
     this.monthlyBudgetService.getMonths(this.thisMonth, this.thisYear).subscribe((all: MonthlyBasicInfo) => {
       this.all = all;
       this.income = all.Income;
@@ -63,6 +60,7 @@ export class MonthlybudgetIndexComponent implements OnInit {
     else {
       this.isGoodStamp = false;
     }
+
   }
 
 }

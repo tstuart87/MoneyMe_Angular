@@ -21,7 +21,7 @@
             <div>
                 <mat-form-field>
                     <p>Amount:</p>
-                    <input matInput formControlName="Amount" type="number" required
+                    <input matInput formControlName="Amount" min="0" type="number" required
                         [value]="debt.Amount" />
                 </mat-form-field>
             </div>
