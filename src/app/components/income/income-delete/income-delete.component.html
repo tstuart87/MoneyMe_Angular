@@ -11,6 +11,14 @@
         <label>Amount:</label>
         <span>{{income.Amount}}</span>
     </div>
+    <div>
+        <label>Month: </label>
+        <span>{{income.Info[0].Month}}</span>
+    </div>
+    <div>
+        <label>Year: </label>
+        <span>{{income.Info[0].Year}}</span>
+    </div>
     <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
 </div>
 
