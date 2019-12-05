@@ -1,4 +1,6 @@
-# MoneyMeAngular
+# MoneyMe
+
+Simple budgeting app that allows you to track income, expenses, future fun expenses, and debt spending. Consolidates everything into a monthly view to notify the user if they are under or over budget.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
 
